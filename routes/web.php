@@ -18,5 +18,5 @@ Route::get('/', function () {
 });
 
 Route::get('/', function () {
-    return view('sdgs');
+    return view('sdg3');
 });
