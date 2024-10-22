@@ -40,11 +40,21 @@ section {
     padding: 15px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid black;
 }
 
 h2 {
     color: #4CAF50;
 }
+
+.container {
+    text-align: center; /* 將容器內的內容（如圖片）居中 */
+  }
+  
+  .container img {
+    display: block; /* 使圖片成為一個塊級元素，這樣它就可以居中 */
+    margin: 0 auto; /* 設置頂部和底部邊距為0，左右自動計算以實現居中 */
+  }
 
 table {
     width: 100%;
@@ -68,3 +78,4 @@ footer {
     bottom: 0;
     width: 100%;
 }
+

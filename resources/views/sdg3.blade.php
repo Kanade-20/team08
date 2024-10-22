@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="TEAM08/resources/css/sdg3.css">
+    <link rel="stylesheet" href="../css/sdg3.css">
     <title>健康與福祉</title>
 </head>
 
@@ -26,8 +26,8 @@
             <article>
                 <h3>1.1 什麽是癌症</h3>
                 <p>&nbsp;&nbsp;&nbsp;&nbsp;癌症是一组可影响身体任何部位的多种疾病的通称。使用的其它术语为恶性肿瘤和赘生物。癌症的一个决定性特征是异常细胞快速生成，这些细胞超越其通常边界生长并可侵袭身体的临近部位和扩散到其它器官。后者被称为转移。广泛转移是癌症死亡的主要原因。</p>
-                <p>點擊下方圖片即可觀看科普視頻：癌症的產生👇</p>
-                <a href="https://www.youtube.com/watch?v=OclyNtCO4IY"><img src="./resources/cancer.jpg"></a>
+                <p class="container">點擊下方圖片即可觀看科普視頻：癌症的產生👇</p>
+                <a href="https://www.youtube.com/watch?v=OclyNtCO4IY" class="container"><img src="../images/cancer.jpg"></a>
             </article>
 
             <article>
@@ -40,7 +40,7 @@
             </article>
         </section>
         
-        <section>
+        <section id="effects">
             <h2>二、癌症的影響及範圍</h2>
             <!-- 此處是原先打算引用數據庫中csv文件的部分，因本人技術問題暫無法實現，暫用其他數據代替 -->
             <p>&nbsp;&nbsp;&nbsp;&nbsp;癌症是全世界的一个主要死因，2020年导致近1千万人死亡(1)。
@@ -133,16 +133,16 @@
                 <a href="https://www.youtube.com/watch?v=OclyNtCO4IY">（2）科普視頻來源：https://www.youtube.com/watch?v=OclyNtCO4IY</a>
                 <br>
                 <br>
-                <a href="https://www.bing.com/images/search?view=detailV2&ccid=PHZ%2BiGjY&id=47252984F5B556CB670EE24E3450BBF338DDECBF&thid=OIP.PHZ-iGjYr7avHkXthzycHgHaEJ&mediaurl=https%3A%2F%2Fpng.pngtree.com%2Fthumb_back%2Ffw800%2Fbackground%2F20230519%2Fpngtree-an-invasive-cancer-cell-image_2572480.jpg&cdnurl=https%3A%2F%2Fth.bing.com%2Fth%2Fid%2FR.3c767e8868d8afb6af1e45ed873c9c1e%3Frik%3Dv%252bzdOPO7UDRO4g%26pid%3DImgRaw%26r%3D0&exph=538&expw=960&q=%E7%99%8C%E7%97%87%E9%AB%98%E6%B8%85%E5%9C%96%E7%89%87&simid=608049009288351226&FORM=IRPRST&ck=A7952336AD698558B899AEC337990DB6&selectedIndex=10&itb=0&qpvt=%E7%99%8C%E7%97%87%E9%AB%98%E6%B8%85%E5%9C%96%E7%89%87&cw=1028&ch=720&ajaxhist=0&ajaxserp=0">（3）癌症圖片來源：https://www.bing.com/images/search?view=detailV2&ccid=PHZ%2BiGjY&id=47252984F5B556CB670EE24E3450BBF338DDECBF&thid=OIP.PHZ-iGjYr7avHkXthzycHgHaEJ&mediaurl=https%3A%2F%2Fpng.pngtree.com%2Fthumb_back%2Ffw800%2Fbackground%2F20230519%2Fpngtree-an-invasive-cancer-cell-image_2572480.jpg&cdnurl=https%3A%2F%2Fth.bing.com%2Fth%2Fid%2FR.3c767e8868d8afb6af1e45ed873c9c1e%3Frik%3Dv%252bzdOPO7UDRO4g%26pid%3DImgRaw%26r%3D0&exph=538&expw=960&q=%E7%99%8C%E7%97%87%E9%AB%98%E6%B8%85%E5%9C%96%E7%89%87&simid=608049009288351226&FORM=IRPRST&ck=A7952336AD698558B899AEC337990DB6&selectedIndex=10&itb=0&qpvt=%E7%99%8C%E7%97%87%E9%AB%98%E6%B8%85%E5%9C%96%E7%89%87&cw=1028&ch=720&ajaxhist=0&ajaxserp=0</a>
+                <a href="https://zh.pngtree.com/freebackground/an-invasive-cancer-cell_2667546.html">“癌細胞”圖片來源：https://zh.pngtree.com/freebackground/an-invasive-cancer-cell_2667546.html</a>
                 <br>
                 <br>
                 <a href="https://helloyishi.com.tw/cancer/cancer-types-and-stage/">（4）“癌症分類”來源：https://helloyishi.com.tw/cancer/cancer-types-and-stage/</a>
                 <br>
                 <br>
-                <a href="https://www.who.int/zh/news-room/fact-sheets/detail/cancer#:~:text=%E7%99%8C%E7%97%87%E6%98%AF%E4%B8%80%E7%BB%84%E5%8F%AF%E5%BD%B1%E5%93%8D%E8%BA%AB%E4%BD%93%E4%BB%BB%E4%BD%95%E9%83%A8%E4%BD%8D%E7%9A%84%E5%A4%9A%E7%A7%8D%E7%96%BE%E7%97%85%E7%9A%84%E9%80%9A%E7%A7%B0%E3%80%82%20%E4%BD%BF%E7%94%A8%E7%9A%84%E5%85%B6%E5%AE%83%E6%9C%AF%E8%AF%AD%E4%B8%BA%E6%81%B6%E6%80%A7%E8%82%BF%E7%98%A4%E5%92%8C%E8%B5%98%E7%94%9F%E7%89%A9%E3%80%82,%E7%99%8C%E7%97%87%E7%9A%84%E4%B8%80%E4%B8%AA%E5%86%B3%E5%AE%9A%E6%80%A7%E7%89%B9%E5%BE%81%E6%98%AF%E5%BC%82%E5%B8%B8%E7%BB%86%E8%83%9E%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90%EF%BC%8C%E8%BF%99%E4%BA%9B%E7%BB%86%E8%83%9E%E8%B6%85%E8%B6%8A%E5%85%B6%E9%80%9A%E5%B8%B8%E8%BE%B9%E7%95%8C%E7%94%9F%E9%95%BF%E5%B9%B6%E5%8F%AF%E4%BE%B5%E8%A2%AD%E8%BA%AB%E4%BD%93%E7%9A%84%E4%B8%B4%E8%BF%91%E9%83%A8%E4%BD%8D%E5%92%8C%E6%89%A9%E6%95%A3%E5%88%B0%E5%85%B6%E5%AE%83%E5%99%A8%E5%AE%98%E3%80%82%20%E5%90%8E%E8%80%85%E8%A2%AB%E7%A7%B0%E4%B8%BA%E8%BD%AC%E7%A7%BB%E3%80%82%20%E5%B9%BF%E6%B3%9B%E8%BD%AC%E7%A7%BB%E6%98%AF%E7%99%8C%E7%97%87%E6%AD%BB%E4%BA%A1%E7%9A%84%E4%B8%BB%E8%A6%81%E5%8E%9F%E5%9B%A0%E3%80%82">（5）數據來源：https://www.who.int/zh/news-room/fact-sheets/detail/cancer#:~:text=%E7%99%8C%E7%97%87%E6%98%AF%E4%B8%80%E7%BB%84%E5%8F%AF%E5%BD%B1%E5%93%8D%E8%BA%AB%E4%BD%93%E4%BB%BB%E4%BD%95%E9%83%A8%E4%BD%8D%E7%9A%84%E5%A4%9A%E7%A7%8D%E7%96%BE%E7%97%85%E7%9A%84%E9%80%9A%E7%A7%B0%E3%80%82%20%E4%BD%BF%E7%94%A8%E7%9A%84%E5%85%B6%E5%AE%83%E6%9C%AF%E8%AF%AD%E4%B8%BA%E6%81%B6%E6%80%A7%E8%82%BF%E7%98%A4%E5%92%8C%E8%B5%98%E7%94%9F%E7%89%A9%E3%80%82,%E7%99%8C%E7%97%87%E7%9A%84%E4%B8%80%E4%B8%AA%E5%86%B3%E5%AE%9A%E6%80%A7%E7%89%B9%E5%BE%81%E6%98%AF%E5%BC%82%E5%B8%B8%E7%BB%86%E8%83%9E%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90%EF%BC%8C%E8%BF%99%E4%BA%9B%E7%BB%86%E8%83%9E%E8%B6%85%E8%B6%8A%E5%85%B6%E9%80%9A%E5%B8%B8%E8%BE%B9%E7%95%8C%E7%94%9F%E9%95%BF%E5%B9%B6%E5%8F%AF%E4%BE%B5%E8%A2%AD%E8%BA%AB%E4%BD%93%E7%9A%84%E4%B8%B4%E8%BF%91%E9%83%A8%E4%BD%8D%E5%92%8C%E6%89%A9%E6%95%A3%E5%88%B0%E5%85%B6%E5%AE%83%E5%99%A8%E5%AE%98%E3%80%82%20%E5%90%8E%E8%80%85%E8%A2%AB%E7%A7%B0%E4%B8%BA%E8%BD%AC%E7%A7%BB%E3%80%82%20%E5%B9%BF%E6%B3%9B%E8%BD%AC%E7%A7%BB%E6%98%AF%E7%99%8C%E7%97%87%E6%AD%BB%E4%BA%A1%E7%9A%84%E4%B8%BB%E8%A6%81%E5%8E%9F%E5%9B%A0%E3%80%82</a>
+                <a href="https://www.who.int/zh/news-room/fact-sheets/detail/cancer">數據來源："https://www.who.int/zh/news-room/fact-sheets/detail/cancer"</a>
                 <br>
                 <br>
-                <a href="https://www.who.int/zh/news-room/fact-sheets/detail/cancer#:~:text=%E7%99%8C%E7%97%87%E6%98%AF%E4%B8%80%E7%BB%84%E5%8F%AF%E5%BD%B1%E5%93%8D%E8%BA%AB%E4%BD%93%E4%BB%BB%E4%BD%95%E9%83%A8%E4%BD%8D%E7%9A%84%E5%A4%9A%E7%A7%8D%E7%96%BE%E7%97%85%E7%9A%84%E9%80%9A%E7%A7%B0%E3%80%82%20%E4%BD%BF%E7%94%A8%E7%9A%84%E5%85%B6%E5%AE%83%E6%9C%AF%E8%AF%AD%E4%B8%BA%E6%81%B6%E6%80%A7%E8%82%BF%E7%98%A4%E5%92%8C%E8%B5%98%E7%94%9F%E7%89%A9%E3%80%82,%E7%99%8C%E7%97%87%E7%9A%84%E4%B8%80%E4%B8%AA%E5%86%B3%E5%AE%9A%E6%80%A7%E7%89%B9%E5%BE%81%E6%98%AF%E5%BC%82%E5%B8%B8%E7%BB%86%E8%83%9E%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90%EF%BC%8C%E8%BF%99%E4%BA%9B%E7%BB%86%E8%83%9E%E8%B6%85%E8%B6%8A%E5%85%B6%E9%80%9A%E5%B8%B8%E8%BE%B9%E7%95%8C%E7%94%9F%E9%95%BF%E5%B9%B6%E5%8F%AF%E4%BE%B5%E8%A2%AD%E8%BA%AB%E4%BD%93%E7%9A%84%E4%B8%B4%E8%BF%91%E9%83%A8%E4%BD%8D%E5%92%8C%E6%89%A9%E6%95%A3%E5%88%B0%E5%85%B6%E5%AE%83%E5%99%A8%E5%AE%98%E3%80%82%20%E5%90%8E%E8%80%85%E8%A2%AB%E7%A7%B0%E4%B8%BA%E8%BD%AC%E7%A7%BB%E3%80%82%20%E5%B9%BF%E6%B3%9B%E8%BD%AC%E7%A7%BB%E6%98%AF%E7%99%8C%E7%97%87%E6%AD%BB%E4%BA%A1%E7%9A%84%E4%B8%BB%E8%A6%81%E5%8E%9F%E5%9B%A0%E3%80%82">（6）“病因”及“預防”的來源：https://www.who.int/zh/news-room/fact-sheets/detail/cancer#:~:text=%E7%99%8C%E7%97%87%E6%98%AF%E4%B8%80%E7%BB%84%E5%8F%AF%E5%BD%B1%E5%93%8D%E8%BA%AB%E4%BD%93%E4%BB%BB%E4%BD%95%E9%83%A8%E4%BD%8D%E7%9A%84%E5%A4%9A%E7%A7%8D%E7%96%BE%E7%97%85%E7%9A%84%E9%80%9A%E7%A7%B0%E3%80%82%20%E4%BD%BF%E7%94%A8%E7%9A%84%E5%85%B6%E5%AE%83%E6%9C%AF%E8%AF%AD%E4%B8%BA%E6%81%B6%E6%80%A7%E8%82%BF%E7%98%A4%E5%92%8C%E8%B5%98%E7%94%9F%E7%89%A9%E3%80%82,%E7%99%8C%E7%97%87%E7%9A%84%E4%B8%80%E4%B8%AA%E5%86%B3%E5%AE%9A%E6%80%A7%E7%89%B9%E5%BE%81%E6%98%AF%E5%BC%82%E5%B8%B8%E7%BB%86%E8%83%9E%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90%EF%BC%8C%E8%BF%99%E4%BA%9B%E7%BB%86%E8%83%9E%E8%B6%85%E8%B6%8A%E5%85%B6%E9%80%9A%E5%B8%B8%E8%BE%B9%E7%95%8C%E7%94%9F%E9%95%BF%E5%B9%B6%E5%8F%AF%E4%BE%B5%E8%A2%AD%E8%BA%AB%E4%BD%93%E7%9A%84%E4%B8%B4%E8%BF%91%E9%83%A8%E4%BD%8D%E5%92%8C%E6%89%A9%E6%95%A3%E5%88%B0%E5%85%B6%E5%AE%83%E5%99%A8%E5%AE%98%E3%80%82%20%E5%90%8E%E8%80%85%E8%A2%AB%E7%A7%B0%E4%B8%BA%E8%BD%AC%E7%A7%BB%E3%80%82%20%E5%B9%BF%E6%B3%9B%E8%BD%AC%E7%A7%BB%E6%98%AF%E7%99%8C%E7%97%87%E6%AD%BB%E4%BA%A1%E7%9A%84%E4%B8%BB%E8%A6%81%E5%8E%9F%E5%9B%A0%E3%80%82</a>
+                <a href="https://www.who.int/zh/news-room/fact-sheets/detail/cancer">（6）“病因”及“預防”的來源："https://www.who.int/zh/news-room/fact-sheets/detail/cancer"</a>
             </article>
         </section>
     </main>
