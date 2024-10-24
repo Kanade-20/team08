@@ -27,7 +27,7 @@
                 <h3>1.1 什麽是癌症</h3>
                 <p>&nbsp;&nbsp;&nbsp;&nbsp;癌症是一组可影响身体任何部位的多种疾病的通称。使用的其它术语为恶性肿瘤和赘生物。癌症的一个决定性特征是异常细胞快速生成，这些细胞超越其通常边界生长并可侵袭身体的临近部位和扩散到其它器官。后者被称为转移。广泛转移是癌症死亡的主要原因。</p>
                 <p class="container">點擊下方圖片即可觀看科普視頻：癌症的產生👇</p>
-                <a href="https://www.youtube.com/watch?v=OclyNtCO4IY" class="container"><img src="../images/cancer.jpg"></a>
+                <a href="https://www.youtube.com/watch?v=OclyNtCO4IY" class="container"><img src="../images/cancer.jpg" alt="癌症的產生"></a>
             </article>
 
             <article>
