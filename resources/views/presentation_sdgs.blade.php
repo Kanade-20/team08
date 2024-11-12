@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>可持續發展目標 (SDGs)</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const links = document.querySelectorAll('a');
+          links.forEach(link => {
+            link.setAttribute('target', '_blank');
+          });
+        });
+    </script>
     <style>
         body{
             text-align: center;
@@ -76,9 +84,7 @@
         </section>
         <section>
                 <h2>17個議題中我要討論的是第三個議題，健康與福祉(Good Health and Well-being)</h2>
-                <a href="https://globalgoals.tw/3-good-health-and-well-being">
-                    <img src="https://storage.googleapis.com/futurecity-cms-cwg-tw/ckeditor/202101/ckeditor-6010d4bfbd6f6.jpg" height="268" width="400" style="border-radius: 15px" />
-                </a>
+                <img src="https://storage.googleapis.com/futurecity-cms-cwg-tw/ckeditor/202101/ckeditor-6010d4bfbd6f6.jpg" height="268" width="400" style="border-radius: 15px" />
             <ul class="my_sdg3">
                 <h1>SDG 3</h1>    
                 <p>SDG 3主要的目標是，<mark>提高各個年齡層全體國民之醫療保健覆蓋率</mark>，並加強因應生命與健康危害，進行健康風險管理。
@@ -126,7 +132,7 @@
                 <p>為了更全面了解癌症的影響，我創建了一個資料庫，包含了從1979年到2022年各縣市的癌症相關數據，
                    涵蓋了粗率、病例數量、及年齡中位數等重要指標。這些數據有助於分析癌症在不同地區的分布，並且為進一步研究和政策制定提供支持。</p>
                 <p>您可以透過以下資料表探索不同地區的癌症統計：</p>
-                <p><a href="{{ url('CancerStatistics') }}" target="_blank">點擊這裡查看資料庫</a></p>
+                <p><a href="{{ url('CancerStatistics') }}" >點擊這裡查看資料庫</a></p>
                 <p>通過分析這些數據，我們可以更好地了解癌症的流行趨勢，並提出改進公共衛生政策的建議。希望這些資料能幫助提升癌症的防控和治療效果。</p>
 
             </ul>
