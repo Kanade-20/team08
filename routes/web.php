@@ -21,9 +21,3 @@ Route::get('/', function () {
 Route::get('/sdg3', function () {
     return view('sdg3');
 });
-
-Route::get('/sdgs', function () {
-    return view('sdgs');
-});
-
-Route::get('Cancer_statistics', [Cancer_statisticsController::class,'index']);
