@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use APP\Http\Controllers\Cancer_statisticsController;
+use App\Http\Controllers\CancerStatisticsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +21,9 @@ Route::get('/', function () {
 Route::get('/sdg3', function () {
     return view('sdg3');
 });
+
+Route::get('/sdgs', function () {
+    return view('sdgs');
+});
+
+Route::get('CancerStatistics',[CancerStatisticsController::class, 'index']);
