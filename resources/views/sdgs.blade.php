@@ -17,7 +17,7 @@
         <section class="goals">
             <div class='main_content'>
             <div class="goal">
-                <img src="{{ asset('storage/images/1.jpg') }}" alt="目標1">
+                <img src="{{ asset('images/1.jpg') }}" alt="目標1">
                 <p class="title">目標1.消除貧窮</p>
                 <p>①經濟支持：提供基本收入保障和社會保護制度，幫助貧困人口獲得經濟資源。</p>
                 <p>②教育機會：確保貧困人口獲得平等的教育機會，提高就業能力和生活水平。</p>
@@ -25,7 +25,7 @@
             </div>
 
             <div class="goal">
-                <img src="{{ asset('storage/images/2.jpg') }}" alt="目標2">
+                <img src="{{ asset('images/2.jpg') }}" alt="目標2">
                 <p class="title">目標2.消除饑餓</p>
                 <p>①可持續農業：推廣可持續的農業技術，提高糧食產量和質量。支持小農戶，增加農業收入。</p>
                 <p>②糧食安全：建立糧食儲備系統，確保糧食供應穩定。改善視頻分配網絡，減少浪費。</p>
@@ -33,7 +33,7 @@
             </div>
 
             <div class="goal">
-                <img src="{{ asset('storage/images/3.jpg') }}" alt="目標3">
+                <img src="{{ asset('images/3.jpg') }}" alt="目標3">
                 <p class="title">目標3.健康與福祉</p>
                 <p>①預防保健：加强疾病預防和健康教育，提高公衆健康意識。推廣疫苗接種和定期體檢。</p>
                 <p>②醫療服務：提供可負擔的優質醫療服務，縮小城鄉醫療差距。發展遠程醫療，擴大醫療覆蓋範圍。</p>
@@ -41,7 +41,7 @@
             </div>
 
             <div class="goal">
-                <img src="{{ asset('storage/images/4.jpg') }}" alt="目標4">
+                <img src="{{ asset('images/4.jpg') }}" alt="目標4">
                 <p class="title">目標4.優質教育</p>
                 <p>①普及教育:確保所有兒童都能接受免費、公平和優質的中小學教育。消除教育中的性別差距。</p>
                 <p>②終身學習：推廣成人教育和職業培訓，提供終身學習機會。鼓勵創新教育模式和在綫學習。</p>
@@ -50,7 +50,7 @@
             </div>
 
             <div class="goal">
-                <img src="{{ asset('storage/images/5.jpg') }}" alt="目標5">
+                <img src="{{ asset('images/5.jpg') }}" alt="目標5">
                 <p class="title">目標5.性別平等</p>
                 <p>①消除歧視：消除對婦女和女童的一切形式的歧視。推動性別平等立法和政策執行。</p>
                 <p>②經濟賦權：促進婦女平等參與經濟活動，縮小性別工資差距。支持女性創業和職業發展。</p>
@@ -59,7 +59,7 @@
             </div>
 
             <div class="goal">
-                <img src="{{ asset('storage/images/6.jpg') }}" alt="目標6">
+                <img src="{{ asset('images/6.jpg') }}" alt="目標6">
                 <p class="title">目標6.清潔飲水和衛生設施</p>
                 <p>①安全飲水：確保所有人都能獲得安全、可負擔的飲用水。改善水源保護和水質監測系統。</p>
                 <p>②衛生設施：提供適當的衛生設施，消除露天排便現象。推廣個人衛生習慣，預防疾病傳播。</p>
@@ -68,7 +68,7 @@
             </div>
 
             <div class="goal">
-                <img src="{{ asset('storage/images/7.jpg') }}" alt="目標7">
+                <img src="{{ asset('images/7.jpg') }}" alt="目標7">
                 <p class="title">目標7.經濟適用能源</p>
                 <table>
                     <tr>
@@ -105,7 +105,7 @@
             </div>
 
             <div class="goal">
-                <img src="{{ asset('storage/images/8.jpg') }}" alt="目標8">
+                <img src="{{ asset('images/8.jpg') }}" alt="目標8">
                 <p class="title">目標8.就業與經濟增長</p>
                 <p>①經濟增長：促進持續、包容和可持續的經濟增長。支持創新和高附加值產業發展。</p>
                 <p>②充分就業：實現充分和生產性就業，確保體面工作。重視青年就業和職業技能培訓。</p>
@@ -113,7 +113,7 @@
             </div>
 
             <div class="goal">
-                <img src="{{ asset('storage/images/9.jpg') }}" alt="目標9">
+                <img src="{{ asset('images/9.jpg') }}" alt="目標9">
                 <p class="title">目標9.產業、創新和基礎建設</p>
                 <p>①基礎設施：建設可靠、可持續和有抗災能力的基礎設施。促進包容性和可持續工業化。</p>
                 <p>②創新研發：加大科技創新投入，支持本土研發。促進產學研合作，加速科技成果轉化。</p>
@@ -121,7 +121,7 @@
             </div>
 
             <div class="goal">
-                <img src="{{ asset('storage/images/10.jpg') }}" alt="目標10">
+                <img src="{{ asset('images/10.jpg') }}" alt="目標10">
                 <p class="title">目標10.減少國家内部及國家之間的不平等</p>
                 <p>①減少收入差距：促進公平的收入分配，縮減富人和窮人之間的差距，並為所有階層創造更公平的機會。</p>
                 <p>②消除歧視：挑戰所有形式的歧視，例如種族、性別、宗教和性取向，並為所有人提供平等的機會。</p>
@@ -129,14 +129,14 @@
             </div>
 
             <div class="goal">
-                <img src="{{ asset('storage/images/11.jpg') }}" alt="目標11">
+                <img src="{{ asset('images/11.jpg') }}" alt="目標11">
                 <p class="title">目標11.建設包容、安全、有抵禦災害能力和可持續的城市</p>
                 <p>①住房與基礎設施：提供安全、負擔得起和適當的住房，並改善城市基礎設施，例如交通、水和能源系統。</p>
                 <p>②安全與韌性：減少城市災害風險，並增强城市對氣候變化和其他威脅的抵禦能力，例如洪水和地震。</p>
                 <p>③可持續發展：促進城市的可持續發展，通過綠色空間、可再生能源和減少污染等措施，創造更健康和更具韌性的城市。</p>
             </div>
 
-            <div<img src="{{ asset('storage/images/12.jpg') }}" alt="目標12">
+            <div<img src="{{ asset('images/12.jpg') }}" alt="目標12">
                 <p class="title">目標12.確保可持續的消費和生產模式</p>
                 <p>①減少浪費：減少食物、資源和產品的浪費，並採用循環經濟模式來最大限度地利用資源。</p>
                 <p>②促進永續消費：鼓勵消費者選擇可持續產品和服務，並減少對環境的負面影響。</p>
@@ -144,7 +144,7 @@
             </div>
 
             <div class="goal">
-                <img src="{{ asset('storage/images/13.jpg') }}" alt="目標13">
+                <img src="{{ asset('images/13.jpg') }}" alt="目標13">
                 <p class="title">目標13.採取緊急行動應對氣候變化及其影響</p>
                 <p>①減緩氣候變遷：減少溫室氣體排放，以限制全球暖化程度，並避免氣候變化的最嚴重後果。</p>
                 <p>②適應氣候變遷：幫助社區適應氣候變化的影響，例如海平面上升、極端天氣事件和水資源短缺。</p>
@@ -152,7 +152,7 @@
             </div>
 
             <div class="goal">
-                <img src="{{ asset('storage/images/14.jpg') }}" alt="目標14">
+                <img src="{{ asset('images/14.jpg') }}" alt="目標14">
                 <p class="title">目標14.保護和可持續利用海洋和海洋資源</p>
                 <table>
                     <tr>
@@ -191,7 +191,7 @@
             </div>
 
             <div class="goal">
-                <img src="{{ asset('storage/images/15.jpg') }}" alt="目標15">
+                <img src="{{ asset('images/15.jpg') }}" alt="目標15">
                 <p class="title">目標15.保護、恢復和促進可持續利用陸地生態系統</p>
                 <p>①森林保護：保護和恢復森林，促進可持續森林管理，並減少森林砍伐。</p>
                 <p>②生物多樣性：保護和恢復生物多樣性，包括陸地和水生生態系統，並促進永續管理。</p>
@@ -200,7 +200,7 @@
             </div>
 
             <div class="goal">
-                <img src="{{ asset('storage/images/16.jpg') }}" alt="目標16">
+                <img src="{{ asset('images/16.jpg') }}" alt="目標16">
                 <p class="title">目標16.和平、正義與强大的制度</p>
                 <p>①減少暴力和衝突：促進和平、正義和包容的社會，並減少所有形式的暴力和衝突。</p>
                 <p>②促進法治：建立强大的制度，確保法治，保護人權，並促進法治。</p>
@@ -208,7 +208,7 @@
             </div>
 
             <div class="goal">
-                <img src="{{ asset('storage/images/17.jpg') }}" alt="目標17">
+                <img src="{{ asset('images/17.jpg') }}" alt="目標17">
                 <p class="title">目標17.實施和振興全球性夥伴關係</p>
                 <p>①國際合作：加强國際合作，並促進各國政府、民間社會和私營部門之間的夥伴關係，以實現SDGs。</p>
                 <p>②技術轉移：促進技術轉移和能力建設，以幫助發展中國家實現SDGs。</p>
