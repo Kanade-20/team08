@@ -9,7 +9,7 @@
 
 <body>
     <header>
-        <h1>健康與福祉——癌症</h1>
+        <P>健康與福祉——癌症</P>
         <nav>
             <ul>
                 <li><a href="#about">關於癌症</a></li>
@@ -23,21 +23,26 @@
     <main>
         <section id="about">
             <h2>一、關於癌症</h2>
-            <article>
-                <h3>1.1 什麽是癌症</h3>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;癌症是一组可影响身体任何部位的多种疾病的通称。使用的其它术语为恶性肿瘤和赘生物。癌症的一个决定性特征是异常细胞快速生成，这些细胞超越其通常边界生长并可侵袭身体的临近部位和扩散到其它器官。后者被称为转移。广泛转移是癌症死亡的主要原因。</p>
-                <p class="container">點擊下方圖片即可觀看科普視頻：癌症的產生👇</p>
-                <a href="https://www.youtube.com/watch?v=OclyNtCO4IY" class="container"><img src="../images/cancer.jpg" alt="癌症的產生"></a>
-            </article>
+            <div class='box1'>
+                <div class='box1_left'>
+                <article>
+                    <h3>1.1 什麽是癌症</h3>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;癌症是一组可影响身体任何部位的多种疾病的通称。使用的其它术语为恶性肿瘤和赘生物。癌症的一个决定性特征是异常细胞快速生成，这些细胞超越其通常边界生长并可侵袭身体的临近部位和扩散到其它器官。后者被称为转移。广泛转移是癌症死亡的主要原因。</p>
+                </article>
 
-            <article>
-                <h3>1.2 癌症的分類</h3>
-                <p>①上皮癌（Carcinoma）：指發源於皮膚、器官、腺體，或其他身體構造上皮組織的癌細胞，有8~9成的癌症都是上皮癌。例如基底細胞癌（Basal cell carcinoma）、鱗狀細胞癌（Squamous cell carcinoma）、默克細胞癌（Merkel Cell Carcinoma）等。</p>
-                <p>②肉瘤（Sarcoma）：指發源於脂肪、肌肉、肌腱、骨頭，以及軟骨等結締組織的癌細胞。例如軟組織肉瘤（Soft tissue sarcoma）、骨肉瘤（Osteosarcoma）、軟骨肉瘤（Chondrosarcoma）、伊文氏肉瘤（Ewing’s sarcoma）等，其中以好發於青少年的骨肉瘤最為常見。</p>
-                <p>③淋巴瘤（Lymphoma）：指發源於淋巴結與淋巴腺的癌細胞，可分為何杰金氏淋巴瘤（Hodgkin’s lymphoma）和非何杰金氏淋巴瘤（Non-Hodgkin’s lymphoma）兩種。</p>
-                <p>④血癌（Leukemia）：俗稱白血病，發源於製造血球細胞組織的細胞組織，多數指骨髓癌細胞。例：急性淋巴性白血病（Acute lymphocytic leukemia）、慢性淋巴性白血病（Chronic lymphocytic leukemia）、急性骨髓性白血病（Acute myeloid leukemia）、慢性骨髓性白血病（Chronic myeloid leukemia）等。</p>
-                <p>⑤骨髓瘤（Myeloma）：指發源於骨髓的癌化漿細胞，若於一處骨頭形成一個腫瘤，稱為漿細胞瘤，若是多處骨頭有多個腫瘤，則為多發性骨髓瘤。</p>
-            </article>
+                <article>
+                    <h3>1.2 癌症的分類</h3>
+                    <p>①上皮癌（Carcinoma）：指發源於皮膚、器官、腺體，或其他身體構造上皮組織的癌細胞，有8~9成的癌症都是上皮癌。例如基底細胞癌（Basal cell carcinoma）、鱗狀細胞癌（Squamous cell carcinoma）、默克細胞癌（Merkel Cell Carcinoma）等。</p>
+                    <p>②肉瘤（Sarcoma）：指發源於脂肪、肌肉、肌腱、骨頭，以及軟骨等結締組織的癌細胞。例如軟組織肉瘤（Soft tissue sarcoma）、骨肉瘤（Osteosarcoma）、軟骨肉瘤（Chondrosarcoma）、伊文氏肉瘤（Ewing’s sarcoma）等，其中以好發於青少年的骨肉瘤最為常見。</p>
+                    <p>③淋巴瘤（Lymphoma）：指發源於淋巴結與淋巴腺的癌細胞，可分為何杰金氏淋巴瘤（Hodgkin’s lymphoma）和非何杰金氏淋巴瘤（Non-Hodgkin’s lymphoma）兩種。</p>
+                    <p>④血癌（Leukemia）：俗稱白血病，發源於製造血球細胞組織的細胞組織，多數指骨髓癌細胞。例：急性淋巴性白血病（Acute lymphocytic leukemia）、慢性淋巴性白血病（Chronic lymphocytic leukemia）、急性骨髓性白血病（Acute myeloid leukemia）、慢性骨髓性白血病（Chronic myeloid leukemia）等。</p>
+                    <p>⑤骨髓瘤（Myeloma）：指發源於骨髓的癌化漿細胞，若於一處骨頭形成一個腫瘤，稱為漿細胞瘤，若是多處骨頭有多個腫瘤，則為多發性骨髓瘤。</p>
+                </article>
+                </div>
+                <div class='box1_right'>
+                <video src="{{ asset('storage/images/cancer.mp4') }}" type="video/mp4" controls muted data-target="#carouselExampleIndicators1" data-slide-to="0"></video>
+                </div>
+            </div>
         </section>
         
         <section id="effects">
