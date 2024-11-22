@@ -1,8 +1,14 @@
-<html>
-    <head>
-        <title>台灣癌症調查資料</title>
+@extends('app')
+
+@section('title','台灣癌症調查資料')
+
+@section('create_theme', '台灣癌症調查資料')
+
+@section('create_contents')
+    <!--<head>
+        
         <style>
-            /* 設定表格背景顏色 */
+             設定表格背景顏色
             table {
                 background-color: lightblue;
                 width: 100%;
@@ -23,12 +29,11 @@
             text-align: center;
             color: white;
             }
-        </style>
-    </head>
-    <body>
-        <header>
+        </style> 
+    </head>-->
+        <!--<header>
         <h1>台灣癌症調查資料</h1>
-        </header>
+        </header>-->
         <table>
             <thead>
                 <tr>
@@ -65,5 +70,4 @@
                 @endforeach
             </tbody>
         </table>
-    </body>
-</html>
+@endsection
