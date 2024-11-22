@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Faker\Factory as Faker;
+use Carbon\Carbon;
 
 class Cancer_statisticsTableSeeder extends Seeder
 {
@@ -22,6 +23,7 @@ class Cancer_statisticsTableSeeder extends Seeder
         $cancer_types = ['口腔癌', '肺癌', '乳癌', '結腸癌', '肝癌', '肾癌', '骨癌', '胃癌', '食道癌', '胰臟癌', '腦癌', '皮膚癌', '淋巴癌', '白血病'];
 
         for ($index = 1;$index <= 100; $index++) {
+            $random_datetime = Carbon::now()->subMinutes(rand(1,55));
             DB::table('cancer_statistics') -> insert([
                 'cancer_diagnosis_year' => rand(1979 , 2021),
                 'gender' => $genders[array_rand($genders)],
@@ -32,8 +34,8 @@ class Cancer_statisticsTableSeeder extends Seeder
                 'average_age' => $faker->randomFloat(2, 0, 90),
                 'median_age' => $faker->randomFloat(2, 0, 100),
                 'crude_rate' => $faker->randomFloat(2, 0, 100),
-                'created_at' => now(),
-                'updated_at' => now()
+                'created_at' => $random_datetime,
+                'updated_at' => $random_datetime
             ]);
         }
     }

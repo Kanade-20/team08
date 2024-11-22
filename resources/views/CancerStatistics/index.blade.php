@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ mix('css/table.css') }}">
-    <title>Table</title>
-</head>
-<body>
+@extends('CancerStatistics.app')
+
+<link rel="stylesheet" href="{{ mix('css/table.css') }}">
+
+@section('title','Cancer Info')
+
+@section('CancerStatistics_index')
     <table>
         <thead>
             <tr>
@@ -20,6 +18,8 @@
                 <th>average_age(平均年齡)</th>
                 <th>median_age(年齡中位數)</th>
                 <th>crude_rate(粗率 (每10萬人口))</th>
+                <th>created_at(創建時間)</th>
+                <th>updated_at(更新時間)</th>
             </tr>
         </thead>
         <tbody>
@@ -35,9 +35,10 @@
                     <td>{{$cancer->average_age}}</td>
                     <td>{{$cancer->median_age}}</td>
                     <td>{{$cancer->crude_rate}}</td>
+                    <td>{{$cancer->created_at}}</td>
+                    <td>{{$cancer->updated_at}}</td>
                 </tr>
             @endforeach
         </tbody>   
     </table>
-</body>
-</html>
+@endsection

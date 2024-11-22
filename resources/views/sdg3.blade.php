@@ -47,7 +47,6 @@
         
         <section id="effects">
             <h2>二、癌症的影響及範圍</h2>
-            <!-- 此處是原先打算引用數據庫中csv文件的部分，因本人技術問題暫無法實現，暫用其他數據代替 -->
             <p>&nbsp;&nbsp;&nbsp;&nbsp;癌症是全世界的一个主要死因，2020年导致近1千万人死亡(1)。
             <table>
                 <caption>2020年全球癌症新病例和死亡数据统计</caption>
@@ -138,16 +137,13 @@
                 <a href="https://www.youtube.com/watch?v=OclyNtCO4IY">（2）科普視頻來源：https://www.youtube.com/watch?v=OclyNtCO4IY</a>
                 <br>
                 <br>
-                <a href="https://zh.pngtree.com/freebackground/an-invasive-cancer-cell_2667546.html">“癌細胞”圖片來源：https://zh.pngtree.com/freebackground/an-invasive-cancer-cell_2667546.html</a>
+                <a href="https://helloyishi.com.tw/cancer/cancer-types-and-stage/">（3）“癌症分類”來源：https://helloyishi.com.tw/cancer/cancer-types-and-stage/</a>
                 <br>
                 <br>
-                <a href="https://helloyishi.com.tw/cancer/cancer-types-and-stage/">（4）“癌症分類”來源：https://helloyishi.com.tw/cancer/cancer-types-and-stage/</a>
+                <a href="https://www.who.int/zh/news-room/fact-sheets/detail/cancer">(4)數據來源："https://www.who.int/zh/news-room/fact-sheets/detail/cancer"</a>
                 <br>
                 <br>
-                <a href="https://www.who.int/zh/news-room/fact-sheets/detail/cancer">數據來源："https://www.who.int/zh/news-room/fact-sheets/detail/cancer"</a>
-                <br>
-                <br>
-                <a href="https://www.who.int/zh/news-room/fact-sheets/detail/cancer">（6）“病因”及“預防”的來源："https://www.who.int/zh/news-room/fact-sheets/detail/cancer"</a>
+                <a href="https://www.who.int/zh/news-room/fact-sheets/detail/cancer">（5）“病因”及“預防”的來源："https://www.who.int/zh/news-room/fact-sheets/detail/cancer"</a>
             </article>
         </section>
     </main>
