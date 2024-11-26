@@ -1,4 +1,4 @@
-@extends('CancerStatistics.app')
+@extends('app')
 
 <link rel="stylesheet" href="{{ mix('css/table.css') }}">
 

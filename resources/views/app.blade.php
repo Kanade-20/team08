@@ -9,13 +9,13 @@
 <div>
     <div>
         <div>
-            @include('CancerStatistics.header')
+            @include('header')
         </div>
         <div>
             @yield('CancerStatistics_index')
         </div>
         <div>
-            @include('CancerStatistics.footer')
+            @include('footer')
         </div>
     </div>
 </div>
