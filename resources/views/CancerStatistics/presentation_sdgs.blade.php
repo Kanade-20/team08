@@ -1,82 +1,17 @@
-<!DOCTYPE html>
-<html lang="zh-TW">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>可持續發展目標 (SDGs)</title>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-          const links = document.querySelectorAll('a');
-          links.forEach(link => {
-            link.setAttribute('target', '_blank');
-          });
+@extends('app')
+
+@section('title','可持續發展目標 (SDGs)')
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const links = document.querySelectorAll('a');
+        links.forEach(link => {
+        link.setAttribute('target', '_blank');
         });
-    </script>
-    <style>
-        body{
-            text-align: center;
-            background-image: linear-gradient(rgba(0,0,0, 0.4), rgba(0, 0, 0, 0.4)),
-            url('https://thumb.ac-illust.com/30/30d142864bc98bbf6a2ea8b352834fd4_t.jpeg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
+    });
+</script>
+@section('sdgs_contents')
 
-        header{
-            background: khaki;
-            padding: 30px;
-            border-radius: 15px;
-        }
-
-        ul.my_sdg3{
-            padding: 0;
-            border-radius: 10px; 
-            margin: 5px 10%;
-            padding: 15px; 
-            background-color: rgba(241, 241, 241,0.5);  
-        }
-        
-        li.issue_title{
-            border-radius: 10px;
-            font-size: 150%;
-            font-weight: bold;
-        }
-        
-        img.sdgs{
-            display: block;
-            margin: 0 auto;
-            height:134px;
-            width:200px;
-            border-radius: 15px;
-        }
-        
-        .issue_content::before {
-            content: '• '; 
-            color: black; 
-            font-size: 1.2em;
-        }
-        
-        .text_color{
-            color:rgb(2, 121, 248); 
-            font-weight: bold;
-        }
-
-        .text_comtent{
-            text-align: left;    
-        }
-
-        .sdg-grid {
-            display: grid;
-            grid-template-columns: repeat(8, 1fr);
-            gap: 10px; 
-        }
-
-    </style>
-</head>
-<body>
-    <header>
-        <h1>可持續發展目標 (SDGs)</h1>
-    </header>
     <main>
         <section>
             <h2>什麼是SDGs?</h2>
@@ -190,8 +125,5 @@
             </a>
           </div>
     </main>
-    <footer>
-        <p>&copy; 2024 可持續發展目標介紹</p>
-    </footer>
-</body>
-</html>
+ 
+@endsection

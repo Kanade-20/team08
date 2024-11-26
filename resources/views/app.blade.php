@@ -26,8 +26,14 @@
         }
 
         .bordered-table {
+            background-color: lightblue;
             border-collapse: collapse; 
-            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center; 
+            width: auto; 
+            border-radius: 10px;
+            padding-left: 100px;
         }
 
         .bordered-table th,
@@ -37,7 +43,7 @@
         }
 
         .bordered-table th {
-            background-color: #6bd3e39b; 
+            background-color: #e4522e9b; 
         }
 
         .bordered-table td{
@@ -46,8 +52,53 @@
         .create_h {
             color: rgb(0, 0, 0);
             font-size:150%;
-
+            font-weight: bold;
         }
+
+        ul.my_sdg3{
+            padding: 0;
+            border-radius: 10px; 
+            margin: 5px 10%;
+            padding: 15px; 
+            background-color: rgba(241, 241, 241,0.5);  
+        }
+        
+        li.issue_title{
+            border-radius: 10px;
+            font-size: 150%;
+            font-weight: bold;
+        }
+        
+        img.sdgs{
+            display: block;
+            margin-left:23px ;
+            height:134px;
+            width:200px;
+            border-radius: 15px;
+        }
+        
+        ul.issue_content::before {
+            content: '• '; 
+            color: black; 
+            font-size: 1.2em;
+        }
+        
+        p.text_color{
+            color:rgb(2, 121, 248); 
+            font-weight: bold;
+        }
+
+        p.text_comtent{
+            text-align: left;    
+        }
+
+        .sdg-grid {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            gap: 10px; 
+        }
+
+
 </style> 
 <body class="pre_sdg">
     <div class="bold header">
@@ -59,6 +110,9 @@
     <div class="bordered-table">
         @yield('create_contents')
     </div>
+    <div class="my_sdg3 issue_title img.sdgs issue_content text_color text_comtent sdg-grid">
+        @yield('sdgs_contents')
+    </div>    
     <div>
         @include('footer')
     </div>

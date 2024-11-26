@@ -14,7 +14,7 @@ use App\Http\Controllers\CancerStatisticsController;
 */
 
 Route::get('/', function () {
-    return view('presentation_sdgs');
+    return view('CancerStatistics.presentation_sdgs');
 });
 
 Route::get('/sdgs', function () {

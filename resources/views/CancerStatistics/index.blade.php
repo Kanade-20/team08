@@ -5,35 +5,7 @@
 @section('create_theme', '台灣癌症調查資料')
 
 @section('create_contents')
-    <!--<head>
-        
-        <style>
-             設定表格背景顏色
-            table {
-                background-color: lightblue;
-                width: 100%;
-                border-collapse: collapse;
-            }
-            th, td {
-                padding: 10px;
-                border: 1px solid black;
-                text-align: center;
-            }
-            header {
-            background-image: linear-gradient(rgba(110, 110, 110, 0.736), rgba(110, 110, 110, 0.736)),
-            url('https://img.tusij.com/qiantu_assets/user_download_ue/2021-05-26/qt_ac0aa92b59f5677a9ee4dbabb270db00_34872.jpg%21w390?auth_key=1746835200-0-0-cc5b792040d01677a9f170d9e1d49f17');
-            background-position: center;
-            background-repeat: repeat;
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            color: white;
-            }
-        </style> 
-    </head>-->
-        <!--<header>
-        <h1>台灣癌症調查資料</h1>
-        </header>-->
+
         <table>
             <thead>
                 <tr>
