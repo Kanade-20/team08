@@ -20,10 +20,13 @@
                 <th>crude_rate(粗率 (每10萬人口))</th>
                 <th>created_at(創建時間)</th>
                 <th>updated_at(更新時間)</th>
+                <th>操作一</th>
+                <th>操作二</th>
+                <th>操作三</th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($cancer_statistics as $index => $cancer)
+            @foreach ($CancerStatistics as $index => $cancer)
                 <tr>
                     <td>{{ $index + 1 }}</td>
                     <td>{{$cancer->cancer_diagnosis_year}}</td>
@@ -37,6 +40,15 @@
                     <td>{{$cancer->crude_rate}}</td>
                     <td>{{$cancer->created_at}}</td>
                     <td>{{$cancer->updated_at}}</td>
+                    <td><a href="{{ route('CancerStatistics.show',['id' => $cancer->id]) }}">詳情</a></td>
+                    <td><a href="{{ route('CancerStatistics.edit',['id' => $cancer->id]) }}">編輯</a></td>
+                    <td>
+                        <form action="{{ url('/CancerStatistics/delete',['id' => $cancer->id]) }}" method="post">
+                            <input class="btn btn-default" type="submit" value="刪除">
+                            @method('delete')
+                            @csrf
+                        </form>
+                    </td>
                 </tr>
             @endforeach
         </tbody>   

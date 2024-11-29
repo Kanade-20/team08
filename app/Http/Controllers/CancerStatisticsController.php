@@ -14,8 +14,9 @@ class CancerStatisticsController extends Controller
      */
     public function index()
     {
-        $cancer_statistics = CancerStatistics::all();
-        return view('CancerStatistics.index',compact('cancer_statistics'));
+        $CancerStatistics = CancerStatistics::all();
+        //return view('CancerStatistics.index',compact('CancerStatistics'));
+        return view('CancerStatistics.index')->with('CancerStatistics',$CancerStatistics);
     }
 
     /**
@@ -48,6 +49,8 @@ class CancerStatisticsController extends Controller
     public function show($id)
     {
         //
+        $CancerStatistics = CancerStatistics::findOrFail($id);
+        return view('CancerStatistics.show')->with('CancerStatistics',$CancerStatistics);
     }
 
     /**
@@ -82,5 +85,8 @@ class CancerStatisticsController extends Controller
     public function destroy($id)
     {
         //
+        $CancerStatistics = CancerStatistics::findOrFail($id);
+        $CancerStatistics->delete();
+        return redirect('CancerStatistics');
     }
 }
