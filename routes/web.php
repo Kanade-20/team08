@@ -21,4 +21,7 @@ Route::get('/sdgs', function () {
     return view('intro_sdgs');
 });
 
-Route::get('CancerStatistics',[CancerStatisticsController::class, 'index']);
+Route::get('CancerStatistics',[CancerStatisticsController::class, 'index'])->name('CancerStatistics.index');
+Route::get('CancerStatistics/{id}',[CancerStatisticsController::class, 'show'])->where('id','[0-9]+')->name('CancerStatistics.show');
+Route::get('CancerStatistics/{id}/edit',[CancerStatisticsController::class, 'edit'])->where('id','[0-9]+')->name('CancerStatistics.edit');
+Route::delete('CancerStatistics/delete/{id}',[CancerStatisticsController::class, 'destroy'])->where('id','[0-9]+')->name('CancerStatistics.destroy');

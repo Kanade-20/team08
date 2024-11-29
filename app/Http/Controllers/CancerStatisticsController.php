@@ -49,6 +49,9 @@ class CancerStatisticsController extends Controller
     public function show($id)
     {
         //
+        $cancerstatistic = CancerStatistics::findOrFail($id);
+        return view('CancerStatistics.show',compact('cancerstatistic'));
+    
     }
 
     /**
@@ -83,5 +86,9 @@ class CancerStatisticsController extends Controller
     public function destroy($id)
     {
         //
+
+        $cancerstatistic = CancerStatistics::findOrFail($id);
+        $cancerstatistic->delete();
+        return redirect('CancerStatistics');
     }
 }

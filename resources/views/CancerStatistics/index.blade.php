@@ -21,6 +21,10 @@
                     <th>粗率 (每10萬人口)</th>
                     <th>創建時間</th>
                     <th>更新時間</th>
+                    <th>操作1</th>
+                    <th>操作2</th>
+                    <th>操作3</th>
+
                 </tr>
             </thead>
             <tbody>
@@ -38,6 +42,15 @@
                         <td>{{$cancer->crude_rate}}</td>
                         <td>{{$cancer->created_at}}</td>
                         <td>{{$cancer->updated_at}}</td>
+                        <td><a href="{{ route('CancerStatistics.show', ['id' => $cancer->id]) }}">顯示</a></td>
+                        <td><a href="{{ route('CancerStatistics.show', ['id' => $cancer->id]) }}">修改</a></td>
+                        <td>
+                            <form action="{{ url('/CancerStatistics/delete', ['id' => $cancer->id]) }}" method="post">
+                                <input class="btn btn-default" type="submit" value="刪除" />
+                                @method('delete')
+                                @csrf
+                            </form>
+                        </td>
                     </tr>    
                 @endforeach
             </tbody>

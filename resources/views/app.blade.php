@@ -15,6 +15,11 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+            min-height: 100vh;
+            margin: 0; 
+            display: flex;
+            flex-direction: column; 
+            justify-content: space-between; 
         }
 
         .header{
@@ -26,20 +31,22 @@
         }
 
         .bordered-table {
-            background-color: lightblue;
+            background-color: rgba(173, 216, 230, 0.568);
             border-collapse: collapse; 
-            display: flex;
-            justify-content: flex-start;
             align-items: center; 
             width: auto; 
             border-radius: 10px;
+            margin: 0 auto; 
             padding-left: 100px;
+            padding: 10px;
         }
 
         .bordered-table th,
         .bordered-table td {
             border: 1px solid black; 
-            padding: 8px; 
+            padding: 10px 20px; 
+            vertical-align: middle; 
+            font-size: 16px; 
         }
 
         .bordered-table th {
@@ -71,7 +78,7 @@
         
         img.sdgs{
             display: block;
-            margin-left:23px ;
+            margin-left: 23px ;
             height:134px;
             width:200px;
             border-radius: 15px;
@@ -98,6 +105,12 @@
             gap: 10px; 
         }
 
+        img.sdg3{
+            border-radius: 15px;
+            height: 268;
+            width: 400;
+        }
+
 
 </style> 
 <body class="pre_sdg">
@@ -110,8 +123,11 @@
     <div class="bordered-table">
         @yield('create_contents')
     </div>
-    <div class="my_sdg3 issue_title img.sdgs issue_content text_color text_comtent sdg-grid">
+    <div class="my_sdg3 issue_title issue_content text_color text_comtent sdg3">
         @yield('sdgs_contents')
+    </div>    
+    <div class="img.sdgs sdg-grid">
+        @yield('sdgs_img')
     </div>    
     <div>
         @include('footer')

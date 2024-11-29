@@ -11,7 +11,6 @@
     });
 </script>
 @section('sdgs_contents')
-
     <main>
         <section>
             <h2>什麼是SDGs?</h2>
@@ -19,7 +18,7 @@
         </section>
         <section>
                 <h2>17個議題中我要討論的是第三個議題，健康與福祉(Good Health and Well-being)</h2>
-                <img src="https://storage.googleapis.com/futurecity-cms-cwg-tw/ckeditor/202101/ckeditor-6010d4bfbd6f6.jpg" height="268" width="400" style="border-radius: 15px" />
+                <img src="https://storage.googleapis.com/futurecity-cms-cwg-tw/ckeditor/202101/ckeditor-6010d4bfbd6f6.jpg" class="sdg3"/>
             <ul class="my_sdg3">
                 <h1>SDG 3</h1>    
                 <p>SDG 3主要的目標是，<mark>提高各個年齡層全體國民之醫療保健覆蓋率</mark>，並加強因應生命與健康危害，進行健康風險管理。
@@ -74,6 +73,8 @@
         </section>
         <h2 style="text-align: center">其他可持續發展目標</h2>
         <h2>(點選圖片可以了解更多)</h2>
+@endsection
+@section('sdgs_img')        
         <div class="sdg-grid">
             <a href="https://globalgoals.tw/1-no-poverty">
                 <img class="sdgs" src="https://storage.googleapis.com/futurecity-cms-cwg-tw/ckeditor/202101/ckeditor-6010d440e1ecf.jpg" />
@@ -125,5 +126,4 @@
             </a>
           </div>
     </main>
- 
 @endsection
