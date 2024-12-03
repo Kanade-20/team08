@@ -30,11 +30,14 @@
             font-weight: bold;
         }
 
-        .bordered-table {
-            background-color: rgba(173, 216, 230, 0.568);
+        .bordered-table {          
             border-collapse: collapse; 
             align-items: center; 
             width: auto; 
+        }
+
+        table.bordered{
+            background-color: rgba(173, 216, 230, 0.568);
             border-radius: 10px;
             margin: 0 auto; 
             padding-left: 100px;
@@ -107,8 +110,34 @@
 
         img.sdg3{
             border-radius: 15px;
-            height: 268;
-            width: 400;
+            height: 268px;
+            width: 400px;
+        }
+
+        input.button {
+            background-color: #04AA6D; /* Green */
+            border: none;
+            color: white;
+            padding: 6px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 10px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            border-radius: 10px; 
+        }
+
+        input.button2 {
+            background-color: white; 
+            color: black; 
+            border: 2px solid #008CBA;
+        }
+
+        input.button2:hover {
+            background-color: #008CBA;
+            color: white;
         }
 
 
@@ -120,13 +149,13 @@
     <div class="create_h ">
         @yield('create_theme')
     </div>    
-    <div class="bordered-table">
+    <div class="bordered-table bordered button button2">
         @yield('create_contents')
     </div>
     <div class="my_sdg3 issue_title issue_content text_color text_comtent sdg3">
         @yield('sdgs_contents')
     </div>    
-    <div class="img.sdgs sdg-grid">
+    <div class="sdgs sdg-grid">
         @yield('sdgs_img')
     </div>    
     <div>

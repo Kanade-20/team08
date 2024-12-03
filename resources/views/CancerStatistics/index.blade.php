@@ -6,7 +6,7 @@
 
 @section('create_contents')
 
-        <table>
+        <table class="bordered">
             <thead>
                 <tr>
                     <th>Id</th>
@@ -46,7 +46,7 @@
                         <td><a href="{{ route('CancerStatistics.show', ['id' => $cancer->id]) }}">修改</a></td>
                         <td>
                             <form action="{{ url('/CancerStatistics/delete', ['id' => $cancer->id]) }}" method="post">
-                                <input class="btn btn-default" type="submit" value="刪除" />
+                                <input class="button button2" type="submit" value="刪除" />
                                 @method('delete')
                                 @csrf
                             </form>
