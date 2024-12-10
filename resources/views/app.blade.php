@@ -9,7 +9,6 @@
 </head>
 <style>
         body.pre_sdg{
-            text-align: center;
             background-image: linear-gradient(rgba(0,0,0, 0.4), rgba(0, 0, 0, 0.4)),
             url('https://thumb.ac-illust.com/30/30d142864bc98bbf6a2ea8b352834fd4_t.jpeg');
             background-size: cover;
@@ -28,12 +27,14 @@
             border-radius: 15px;
             font-size: 2em;
             font-weight: bold;
+            text-align: center;
         }
 
         .bordered-table {          
             border-collapse: collapse; 
             align-items: center; 
             width: auto; 
+            text-align: center;
         }
 
         table.bordered{
@@ -63,6 +64,7 @@
             color: rgb(0, 0, 0);
             font-size:150%;
             font-weight: bold;
+            text-align: center;
         }
 
         ul.my_sdg3{
@@ -71,12 +73,14 @@
             margin: 5px 10%;
             padding: 15px; 
             background-color: rgba(241, 241, 241,0.5);  
+            text-align: center;
         }
         
         li.issue_title{
             border-radius: 10px;
             font-size: 150%;
             font-weight: bold;
+            text-align: center;
         }
         
         img.sdgs{
@@ -114,7 +118,7 @@
             width: 400px;
         }
 
-        input.button {
+        .button {
             background-color: #04AA6D; /* Green */
             border: none;
             color: white;
@@ -129,17 +133,26 @@
             border-radius: 10px; 
         }
 
-        input.button2 {
+        .button2 {
             background-color: white; 
             color: black; 
             border: 2px solid #008CBA;
         }
 
-        input.button2:hover {
+        .button2:hover {
             background-color: #008CBA;
             color: white;
         }
 
+        .text{
+            text-align: center;
+        }
+
+        @media (min-width: 640px) {
+            .sm\:text-center {
+                text-align:center
+            }
+        }
 
 </style> 
 <body class="pre_sdg">
@@ -149,7 +162,7 @@
     <div class="create_h ">
         @yield('create_theme')
     </div>    
-    <div class="bordered-table bordered button button2">
+    <div class="bordered-table bordered">
         @yield('create_contents')
     </div>
     <div class="my_sdg3 issue_title issue_content text_color text_comtent sdg3">

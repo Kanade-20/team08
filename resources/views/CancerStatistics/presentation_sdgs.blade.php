@@ -11,7 +11,7 @@
     });
 </script>
 @section('sdgs_contents')
-    <main>
+    <main class="text">
         <section>
             <h2>什麼是SDGs?</h2>
             <p>可持續發展目標（SDGs）是聯合國於2015年制定的17個全球目標，旨在解決當前社會、經濟和環境面臨的挑戰。</p>

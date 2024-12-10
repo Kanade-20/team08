@@ -21,6 +21,8 @@ Route::get('/sdgs', function () {
     return view('intro_sdgs');
 });
 
+Route::post('CancerStatistics/store',[CancerStatisticsController::class, 'store'])->name('CancerStatistics.store');
+Route::get('CancerStatistics/create',[CancerStatisticsController::class, 'create'])->name('CancerStatistics.create');
 Route::get('CancerStatistics',[CancerStatisticsController::class, 'index'])->name('CancerStatistics.index');
 Route::get('CancerStatistics/{id}',[CancerStatisticsController::class, 'show'])->where('id','[0-9]+')->name('CancerStatistics.show');
 Route::get('CancerStatistics/{id}/edit',[CancerStatisticsController::class, 'edit'])->where('id','[0-9]+')->name('CancerStatistics.edit');
