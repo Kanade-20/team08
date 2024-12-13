@@ -10,4 +10,16 @@ class CancerStatistics extends Model
     use HasFactory;
 
     protected $table = "cancer_statistics";
+
+    protected $fillable = [
+        'cancer_diagnosis_year' ,
+        'gender',
+        'city',
+        'cancer_type',
+         'age_standardized_incidence_rate',
+         'cancer_cases',
+         'average_age',
+         'median_age',
+         'crude_rate'
+    ];
 }

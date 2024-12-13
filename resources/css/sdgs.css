@@ -1,83 +1,68 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+body{
+    background-color:#f4f4f4;
+    font-family:Arial,sans-serif;
+    margin:0;
+    padding:0
 }
 
-header {
-    background-color: #4caf50;
-    color: white;
-    padding: 20px;
-    text-align: center;
+header{
+    background-color:#4caf50;
+    color:#fff;
+    padding:20px
 }
 
-.title {
-    margin: 0;
-    text-align: center;
+.title,header{
+    text-align:center
 }
 
-main {
-    padding: 20px;
+.title{
+    margin:0
 }
 
-.main_content {
-    display: flex;
-    justify-content: center;
-    flex-flow: row wrap;
-
+main{
+    padding:20px
 }
 
-.goal {
-    width: calc(26% - 10px);
-    /* Adjust width to account for margin */
-    margin: 20px 10px;
-    /* Add margin to the sides */
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 2cap;
-    padding: 20px;
+.main_content{
+    display:flex;
+    flex-flow:row wrap;
+    justify-content:center
 }
 
-.goal img {
-    width: 100%;
-    height: auto;
-    display: block;
-    margin-bottom: 10px;
+.goal{
+    background-color:#fff;
+    border-radius:5px;
+    box-shadow:0 2px 6px rgba(0,0,0,.1);
+    margin:20px 10px 2cap;
+    padding:20px;
+    width:calc(26% - 10px)
 }
 
-.goal p {
-    color: #333;
+.goal img{
+    display:block;
+    height:auto;
+    margin-bottom:10px;
+    width:100%
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
+.goal p{
+    color:#333
 }
 
-table,
-th,
-td {
-    border: 1px solid black;
+table{
+    border-collapse:collapse;
+    width:100%
 }
 
-th,
-td {
-    padding: 8px;
-    text-align: left;
+table,td,th{
+    border:1px solid #000
 }
 
-th {
-    background-color: #f2f2f2;
+td,th{
+    padding:8px;
+    text-align:left
 }
-
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+    
+th{
+    background-color:#f2f2f2
 }

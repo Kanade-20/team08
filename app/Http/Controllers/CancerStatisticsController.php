@@ -27,6 +27,7 @@ class CancerStatisticsController extends Controller
     public function create()
     {
         //
+        return view('CancerStatistics.create');
     }
 
     /**
@@ -37,7 +38,21 @@ class CancerStatisticsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->only([
+           'cancer_diagnosis_year' ,
+           'gender',
+           'city',
+           'cancer_type',
+            'age_standardized_incidence_rate',
+            'cancer_cases',
+            'average_age',
+            'median_age',
+            'crude_rate'
+        ]);
+
+        $CancerStatistics = CancerStatistics::create($data);
+        return redirect('CancerStatistics');
+        
     }
 
     /**

@@ -4,7 +4,7 @@
 
 @section('title','Cancer data detail')
 
-@section('CancerStatistics_index')
+@section('CancerStatistics_show')
 <table>
     <thead>
         <tr>

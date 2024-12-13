@@ -1,10 +1,13 @@
-@extends('app')
+@extends('layouts.app')
 
-<link rel="stylesheet" href="{{ mix('css/table.css') }}">
-
-@section('title','Cancer Info')
+@section('title', '台湾癌症统计数据')
 
 @section('CancerStatistics_index')
+<link rel="stylesheet" href="{{ mix('css/table.css') }}">
+<div class="container">
+    <h1>台湾地区癌症统计数据</h1>
+    <hr>
+    <!-- 癌症数据表格 -->
     <table>
         <thead>
             <tr>
@@ -43,14 +46,15 @@
                     <td><a href="{{ route('CancerStatistics.show',['id' => $cancer->id]) }}">詳情</a></td>
                     <td><a href="{{ route('CancerStatistics.edit',['id' => $cancer->id]) }}">編輯</a></td>
                     <td>
-                        <form action="{{ url('/CancerStatistics/delete',['id' => $cancer->id]) }}" method="post">
-                            <input class="btn btn-default" type="submit" value="刪除">
-                            @method('delete')
+                        <form action="{{ url('CancerStatistics/delete',['id' => $cancer->id]) }}" method="post">
+                            @method('DELETE')
                             @csrf
+                            <button type="submit" class="btn btn-danger">删除</button>
                         </form>
                     </td>
                 </tr>
             @endforeach
         </tbody>   
     </table>
+</div>
 @endsection
