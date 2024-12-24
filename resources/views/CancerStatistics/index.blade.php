@@ -37,7 +37,7 @@
                         <td>{{$cancer->created_at}}</td>
                         <td>{{$cancer->updated_at}}</td>
                         <td><a href="{{ route('CancerStatistics.show', ['id' => $cancer->id]) }}">顯示</a></td>
-                        <td><a href="{{ route('CancerStatistics.show', ['id' => $cancer->id]) }}">修改</a></td>
+                        <td><a href="{{ route('CancerStatistics.edit', ['id' => $cancer->id]) }}">修改</a></td>
                         <td>
                             <form action="{{ url('/CancerStatistics/delete', ['id' => $cancer->id]) }}" method="post">
                                 <input class="button button2" type="submit" value="刪除" />

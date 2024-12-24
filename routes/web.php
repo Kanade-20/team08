@@ -26,4 +26,5 @@ Route::get('CancerStatistics/create',[CancerStatisticsController::class, 'create
 Route::get('CancerStatistics',[CancerStatisticsController::class, 'index'])->name('CancerStatistics.index');
 Route::get('CancerStatistics/{id}',[CancerStatisticsController::class, 'show'])->where('id','[0-9]+')->name('CancerStatistics.show');
 Route::get('CancerStatistics/{id}/edit',[CancerStatisticsController::class, 'edit'])->where('id','[0-9]+')->name('CancerStatistics.edit');
+Route::patch('CancerStatistics/update/{id}',[CancerStatisticsController::class, 'update'])->where('id','[0-9]+')->name('CancerStatistics.update');
 Route::delete('CancerStatistics/delete/{id}',[CancerStatisticsController::class, 'destroy'])->where('id','[0-9]+')->name('CancerStatistics.destroy');

@@ -39,6 +39,7 @@ class CancerStatisticsController extends Controller
     public function store(Request $request)
     {
         //
+        
 
         $data = $request->only([
             'cancer_diagnosis_year',
@@ -81,6 +82,8 @@ class CancerStatisticsController extends Controller
     public function edit($id)
     {
         //
+        $cancerstatistic = CancerStatistics::findOrFail($id);
+        return view('CancerStatistics.edit',compact('cancerstatistic'));
     }
 
     /**
@@ -93,6 +96,24 @@ class CancerStatisticsController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $cancerstatistic = CancerStatistics::findOrFail($id);
+        $data = $request->only([
+            'cancer_diagnosis_year',
+            'gender',
+            'city_county',
+            'cancer_type',
+            'age_standardized_incidence_rate_who_2000',
+            'cancer_cases',
+            'average_age',
+            'median_age',
+            'crude_rate',
+        ]);
+
+        $cancerstatistic->fill($data);
+
+        $cancerstatistic->save();
+
+        return redirect('CancerStatistics');
     }
 
     /**
