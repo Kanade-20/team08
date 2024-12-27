@@ -1,8 +1,8 @@
 @extends('app')
 
-@section('title','新增癌症病例')
+@section('title','修改癌症病例')
 
-@section('create_theme', '新增癌症調查資料')
+@section('create_theme', '修改癌症調查資料')
 
 @section('create_contents')    
     編輯一筆癌症病例

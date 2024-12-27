@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\CancerStatistics;
+use App\Http\Requests\CreateCancerStatisticRequest;
 
 class CancerStatisticsController extends Controller
 {
@@ -36,28 +37,33 @@ class CancerStatisticsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
-        
-
-        $data = $request->only([
-            'cancer_diagnosis_year',
-            'gender',
-            'city_county',
-            'cancer_type',
-            'age_standardized_incidence_rate_who_2000',
-            'cancer_cases',
-            'average_age',
-            'median_age',
-            'crude_rate',
-        ]);
+    public function store(CreateCancerStatisticRequest $request)
+{
     
-        $cancerstatistic = CancerStatistics::create($data);
-
-        return redirect('CancerStatistics');
+    $data = $request->only([
+        'cancer_diagnosis_year',
+        'gender',
+        'city_county',
+        'cancer_type',
+        'age_standardized_incidence_rate_who_2000',
+        'cancer_cases',
+        'average_age',
+        'median_age',
+        'crude_rate',
+    ]);
     
-    }
+    $data['age_standardized_incidence_rate_who_2000'] = number_format($data['age_standardized_incidence_rate_who_2000'], 2, '.', '');
+    $data['average_age'] = number_format($data['average_age'], 2, '.', '');
+    $data['median_age'] = number_format($data['median_age'], 1, '.', '');  
+    $data['crude_rate'] = number_format($data['crude_rate'], 2, '.', '');
+
+    CancerStatistics::create($data);
+
+
+    return redirect('CancerStatistics');
+
+}
+
 
     /**
      * Display the specified resource.

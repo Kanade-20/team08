@@ -6,6 +6,7 @@
 
 @section('create_contents')    
     新增癌症病例
+    @include('message.error')
     {!! Form::open(['url' => 'CancerStatistics/store'])!!}
         @include('CancerStatistics.form', ['submitButtonText'=>'新增癌症病例'])
     {!! Form::close() !!}
