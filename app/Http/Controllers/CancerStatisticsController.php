@@ -99,7 +99,7 @@ class CancerStatisticsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CreateCancerStatisticRequest $request, $id)
     {
         //
         $cancerstatistic = CancerStatistics::findOrFail($id);

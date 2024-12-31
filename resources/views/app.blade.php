@@ -34,7 +34,7 @@
             border-collapse: collapse; 
             align-items: center; 
             width: auto; 
-            text-align: center;
+            
         }
 
         table.bordered{
@@ -43,6 +43,7 @@
             margin: 0 auto; 
             padding-left: 100px;
             padding: 10px;
+            text-align: center;
         }
 
         .bordered-table th,
@@ -51,6 +52,7 @@
             padding: 10px 20px; 
             vertical-align: middle; 
             font-size: 16px; 
+            text-align: center;
         }
 
         .bordered-table th {
@@ -60,6 +62,7 @@
         .bordered-table td{
             background-color: rgba(193, 137, 223, 0.564)
         } 
+
         .create_h {
             color: rgb(0, 0, 0);
             font-size:150%;
@@ -154,6 +157,21 @@
             }
         }
 
+        form.custom-form {
+            background-color: rgba(173, 216, 230, 0.568); 
+            border-radius: 10px;  
+            margin: 0 auto;  
+            padding-left: 100px;  
+            padding: 10px;  
+            width: 313px;  
+        }
+
+        .form-control{
+            width: 200px;
+            padding: 5px
+        }
+
+
 </style> 
 <body class="pre_sdg">
     <div class="bold header">
@@ -162,7 +180,7 @@
     <div class="create_h ">
         @yield('create_theme')
     </div>    
-    <div class="bordered-table bordered">
+    <div class="bordered-table bordered custom-form">
         @yield('create_contents')
     </div>
     <div class="my_sdg3 issue_title issue_content text_color text_comtent sdg3">
