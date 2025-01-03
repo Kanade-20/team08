@@ -38,10 +38,11 @@
                 </tr>     
             </tbody>
         </table>
-        <p>
+        <div class="center-form">
             <form action="{{ url('/CancerStatistics/delete', ['id' => $cancerstatistic->id]) }}" method="post">
                 <input class="button button2" type="submit" value="刪除" />
                 @method('delete')
                 @csrf
             </form>
+        </div>    
 @endsection

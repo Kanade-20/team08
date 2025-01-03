@@ -5,7 +5,10 @@
 @section('create_theme', '台灣癌症調查資料')
 
 @section('create_contents')
+    @auth
         <p class="text"><a href={{ route('CancerStatistics.create');}}>新增癌症調查資料</a></p>
+    @endauth        
+
         <table class="bordered">
             <thead>
                 <tr>
@@ -19,9 +22,12 @@
                     <th>創建時間</th>
                     <th>更新時間</th>
                     <th>操作1</th>
+                    @can('admin')
                     <th>操作2</th>
                     <th>操作3</th>
-
+                    @elsecan('manager')
+                    <th>操作2</th>
+                    @endcan
                 </tr>
             </thead>
             <tbody>
@@ -37,6 +43,7 @@
                         <td>{{$cancer->created_at}}</td>
                         <td>{{$cancer->updated_at}}</td>
                         <td><a href="{{ route('CancerStatistics.show', ['id' => $cancer->id]) }}">顯示</a></td>
+                        @can('admin')
                         <td><a href="{{ route('CancerStatistics.edit', ['id' => $cancer->id]) }}">修改</a></td>
                         <td>
                             <form action="{{ url('/CancerStatistics/delete', ['id' => $cancer->id]) }}" method="post">
@@ -45,6 +52,9 @@
                                 @csrf
                             </form>
                         </td>
+                        @elsecan('manager')
+                        <td><a href="{{ route('CancerStatistics.edit', ['id' => $cancer->id]) }}">修改</a></td>
+                        @endcan
                     </tr>    
                 @endforeach
             </tbody>

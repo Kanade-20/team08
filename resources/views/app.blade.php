@@ -171,6 +171,12 @@
             padding: 5px
         }
 
+        .center-form {
+            display: flex;
+            justify-content: center;
+        }
+
+
 
 </style> 
 <body class="pre_sdg">

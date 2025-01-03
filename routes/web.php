@@ -28,3 +28,7 @@ Route::get('CancerStatistics/{id}',[CancerStatisticsController::class, 'show'])-
 Route::get('CancerStatistics/{id}/edit',[CancerStatisticsController::class, 'edit'])->where('id','[0-9]+')->name('CancerStatistics.edit');
 Route::patch('CancerStatistics/update/{id}',[CancerStatisticsController::class, 'update'])->where('id','[0-9]+')->name('CancerStatistics.update');
 Route::delete('CancerStatistics/delete/{id}',[CancerStatisticsController::class, 'destroy'])->where('id','[0-9]+')->name('CancerStatistics.destroy');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
