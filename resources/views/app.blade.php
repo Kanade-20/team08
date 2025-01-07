@@ -183,6 +183,19 @@
     <div class="bold header">
         @include('header')
     </div>
+    @if (Route::has('login'))
+        <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+            @auth
+                <a href="{{ url('/home') }}" >Home</a>
+            @else
+                <a href="{{ route('login') }}" >Login</a>
+
+                @if (Route::has('register'))
+                    <a href="{{ route('register') }}" >Register</a>
+                @endif
+            @endif
+        </div>
+    @endif
     <div class="create_h ">
         @yield('create_theme')
     </div>    

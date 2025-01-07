@@ -5,9 +5,11 @@
 @section('create_theme', '台灣癌症調查資料')
 
 @section('create_contents')
-    @auth
+    @can('admin')
+        @auth
         <p class="text"><a href={{ route('CancerStatistics.create');}}>新增癌症調查資料</a></p>
-    @endauth        
+        @endauth    
+    @endcan        
 
         <table class="bordered">
             <thead>

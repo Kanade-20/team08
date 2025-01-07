@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 
 Route::get('/sdgs', function () {
-    return view('intro_sdgs');
+    return view('CancerStatistics.presentation_sdgs');
 });
 
 Route::post('CancerStatistics/store',[CancerStatisticsController::class, 'store'])->name('CancerStatistics.store');

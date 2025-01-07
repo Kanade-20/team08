@@ -38,11 +38,13 @@
                 </tr>     
             </tbody>
         </table>
+        @can('admin')
         <div class="center-form">
             <form action="{{ url('/CancerStatistics/delete', ['id' => $cancerstatistic->id]) }}" method="post">
                 <input class="button button2" type="submit" value="刪除" />
                 @method('delete')
                 @csrf
             </form>
-        </div>    
+        </div>
+        @endcan    
 @endsection
