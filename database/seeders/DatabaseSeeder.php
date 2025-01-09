@@ -15,21 +15,21 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $user = new User();
-        $user->password = Hash::make('12345678');
+        $user->password = Hash::make('admin5678');
         $user->email = 'admin@example.com';
         $user->name = 'Admin';
         $user->role = User::ROLE_ADMIN; 
         $user->save();
 
         $user = new User();
-        $user->password = Hash::make('12345678');
+        $user->password = Hash::make('manager5678');
         $user->email = 'manager@example.com';
         $user->role = User::ROLE_MANAGER; 
         $user->name = 'Manager';
         $user->save();
 
         $user = new User();
-        $user->password = Hash::make('12345678');
+        $user->password = Hash::make('candy5678');
         $user->email = 'kndmfy@gmail.com';
         $user->role = User::ROLE_USER; 
         $user->name = 'Candy';

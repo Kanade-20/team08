@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\CancerStatistics;
 use App\Http\Requests\CreateCancerStatisticRequest;
+use Illuminate\Support\Facades\Gate;
 
 class CancerStatisticsController extends Controller
 {
@@ -32,6 +33,9 @@ class CancerStatisticsController extends Controller
     public function create()
     {
         //
+        if (Gate::denies('admin')) {
+            abort(403); // 如果沒有權限，返回 403 錯誤
+        }
         return view('CancerStatistics.create');
     }
 
@@ -93,7 +97,10 @@ class CancerStatisticsController extends Controller
     {
         //
         $cancerstatistic = CancerStatistics::findOrFail($id);
-        return view('CancerStatistics.edit',compact('cancerstatistic'));
+        if (Gate::any(['admin', 'manager'])) {
+            return view('CancerStatistics.edit',compact('cancerstatistic'));
+        }
+        abort(403);
     }
 
     /**

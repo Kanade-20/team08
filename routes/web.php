@@ -1,7 +1,9 @@
 <?php
 
+use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CancerStatisticsController;
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,21 +16,22 @@ use App\Http\Controllers\CancerStatisticsController;
 */
 
 Route::get('/', function () {
-    return view('CancerStatistics.presentation_sdgs');
+    return view('CancerStatistics.sdghome');
 });
 
-Route::get('/sdgs', function () {
-    return view('CancerStatistics.presentation_sdgs');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/sdgs', function () {
+        return view('CancerStatistics.presentation_sdgs');
+    });
+
+    Route::post('CancerStatistics/store',[CancerStatisticsController::class, 'store'])->name('CancerStatistics.store');
+    Route::get('CancerStatistics/create',[CancerStatisticsController::class, 'create'])->name('CancerStatistics.create')-> middleware('can:admin');
+    Route::get('CancerStatistics',[CancerStatisticsController::class, 'index'])->name('CancerStatistics.index');
+    Route::get('CancerStatistics/{id}',[CancerStatisticsController::class, 'show'])->where('id','[0-9]+')->name('CancerStatistics.show');
+    Route::get('CancerStatistics/{id}/edit',[CancerStatisticsController::class, 'edit'])->where('id','[0-9]+')->name('CancerStatistics.edit');
+    Route::patch('CancerStatistics/update/{id}',[CancerStatisticsController::class, 'update'])->where('id','[0-9]+')->name('CancerStatistics.update');
+    Route::delete('CancerStatistics/delete/{id}',[CancerStatisticsController::class, 'destroy'])->where('id','[0-9]+')->name('CancerStatistics.destroy');
 });
-
-Route::post('CancerStatistics/store',[CancerStatisticsController::class, 'store'])->name('CancerStatistics.store');
-Route::get('CancerStatistics/create',[CancerStatisticsController::class, 'create'])->name('CancerStatistics.create');
-Route::get('CancerStatistics',[CancerStatisticsController::class, 'index'])->name('CancerStatistics.index');
-Route::get('CancerStatistics/{id}',[CancerStatisticsController::class, 'show'])->where('id','[0-9]+')->name('CancerStatistics.show');
-Route::get('CancerStatistics/{id}/edit',[CancerStatisticsController::class, 'edit'])->where('id','[0-9]+')->name('CancerStatistics.edit');
-Route::patch('CancerStatistics/update/{id}',[CancerStatisticsController::class, 'update'])->where('id','[0-9]+')->name('CancerStatistics.update');
-Route::delete('CancerStatistics/delete/{id}',[CancerStatisticsController::class, 'destroy'])->where('id','[0-9]+')->name('CancerStatistics.destroy');
-
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

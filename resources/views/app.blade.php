@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>@yield('title')</title>
-
+    @stack('styles')
 </head>
 <style>
-        body.pre_sdg{
+        /* 背景設定 */
+        body.pre_sdg {
             background-image: linear-gradient(rgba(0,0,0, 0.4), rgba(0, 0, 0, 0.4)),
-            url('https://thumb.ac-illust.com/30/30d142864bc98bbf6a2ea8b352834fd4_t.jpeg');
+                            url('https://thumb.ac-illust.com/30/30d142864bc98bbf6a2ea8b352834fd4_t.jpeg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -19,15 +20,128 @@
             display: flex;
             flex-direction: column; 
             justify-content: space-between; 
+            color: black;
+            font-family: 'Arial', sans-serif; /* 設定字型 */
         }
 
-        .header{
-            background: khaki;
-            padding: 30px;
-            border-radius: 15px;
-            font-size: 2em;
+        /* Header 設定 */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;  /* 確保 header 在最上層 */
+            background: rgba(0, 0, 0, 0.7);  /* 透明黑色背景，讓內容更清晰 */
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header nav ul li {
+            margin: 0 15px;
+        }
+
+        .header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
             font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .header nav ul li a:hover {
+            color: rgb(220, 120, 0); /* 滑鼠懸停時的顏色 */
+        }
+
+        /* 讓 home 區域的文字隨著滾動進行移動 */
+        .homecss {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            background: rgba(222, 220, 220, 0.504);
+            background: url(https://www.shutterstock.com/image-vector/sdg-goal-3-good-health-260nw-2552475201.jpg)
+                        no-repeat 50% 50% fixed;
+            background-size: cover;  /* 用cover讓圖片覆蓋整個區域 */
+            overflow: hidden;
+        }
+
+
+        .homecss h1 {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            padding: .3em;
+            font-size: 4em;
+            font-weight: lighter;
+            color: rgb(145, 51, 234);
             text-align: center;
+            font-weight: bold;
+        }
+
+        .intro {
+            padding: 2em 10%;
+            text-align: center;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .intro h2 {
+            font-size: 2em;
+            margin-bottom: 1em;
+        }
+
+        .intro p {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+        /* Content Wrapper */
+        .content-wrapper {
+            padding: 1em 10%;
+            margin-top: 150px; /* 確保不被 header 覆蓋 */
+        }
+
+        .content-wrapper h1 {
+            margin: 0;
+            color: rgb(220, 120, 0);
+        }
+
+        .content-wrapper p {
+            font-family: "Open Sans", sans-serif;
+            text-indent: 1.5em;
+            line-height: 1.6;
+        }
+
+        /* 當使用者滾動頁面時，變更 navbar 背景的透明度 */
+        .nav-bg {
+            content: '';
+            position: absolute;
+            display: block;
+            top: -100%;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: rgb(50, 50, 50);
+            transition: .45s ease-in-out;
+        }
+
+        .bg-hidden {
+            top: -100%;
+            opacity: 0;
+        }
+
+        .bg-visible {
+            top: 0;
+            opacity: 1;
         }
 
         .bordered-table {          
@@ -68,6 +182,7 @@
             font-size:150%;
             font-weight: bold;
             text-align: center;
+            padding-top: 50px;
         }
 
         ul.my_sdg3{
@@ -88,7 +203,7 @@
         
         img.sdgs{
             display: block;
-            margin-left: 23px ;
+            margin-left: 10px ;
             height:134px;
             width:200px;
             border-radius: 15px;
@@ -180,25 +295,15 @@
 
 </style> 
 <body class="pre_sdg">
-    <div class="bold header">
+    <div class="header">
         @include('header')
     </div>
-    @if (Route::has('login'))
-        <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-            @auth
-                <a href="{{ url('/home') }}" >Home</a>
-            @else
-                <a href="{{ route('login') }}" >Login</a>
-
-                @if (Route::has('register'))
-                    <a href="{{ route('register') }}" >Register</a>
-                @endif
-            @endif
-        </div>
-    @endif
     <div class="create_h ">
         @yield('create_theme')
     </div>    
+    <div>
+        @yield('sdghome')
+    </div>
     <div class="bordered-table bordered custom-form">
         @yield('create_contents')
     </div>
@@ -211,5 +316,6 @@
     <div>
         @include('footer')
     </div>
+    @stack('scripts')
 </body>   
 </html>
