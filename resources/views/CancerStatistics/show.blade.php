@@ -1,60 +1,69 @@
-@extends('app')
+@extends('layouts.app')
 
-<link rel="stylesheet" href="{{ mix('css/table.css') }}">
+@section('title', '癌症数据详情')
 
-@section('title','Cancer data detail')
+<style>
+    .cs-show_container {
+        padding: 50px;
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
 
-@section('CancerStatistics_show')
-<table>
-    <thead>
-        <tr>
-            <th>id</th>
-            <td style="background-color: #b3afaf;color: black">{{$CancerStatistics->id}}</td>
-        </tr>
-        <tr>
-            <th>cancer_diagnosis_year(癌症診斷的年份)</th>
-            <td style="background-color: #b3afaf;color: black">{{$CancerStatistics->cancer_diagnosis_year}}</td>
-        </tr>
-        <tr>
-            <th>gender(性別（例如：男性、女性、全等）)</th>
-            <td style="background-color: #b3afaf;color: black">{{$CancerStatistics->gender}}</td>
-        </tr>
-        <tr>
-            <th>city(縣市別)</th>
-            <td style="background-color: #b3afaf;color: black">{{$CancerStatistics->city}}</td>
-        </tr>
-        <tr>
-            <th>cancer_type(癌症類型（例如：口腔、胃等）)</th>
-            <td style="background-color: #b3afaf;color: black">{{$CancerStatistics->cancer_type}}</td>    
-        </tr>    
-        <tr>
-            <th>age_standardized_incidence_rate(年齡標準化發生率 (WHO 2000 世界標準人口 每10萬人口))</th>
-            <td style="background-color: #b3afaf;color: black">{{$CancerStatistics->age_standardized_incidence_rate}}</td>            
-        </tr>
-        <tr>
-            <th>cancer_cases(癌症的發生數量)</th>
-            <td style="background-color: #b3afaf;color: black">{{$CancerStatistics->cancer_cases}}</td>
-        </tr>
-        <tr>
-            <th>average_age(平均年齡)</th>
-            <td style="background-color: #b3afaf;color: black">{{$CancerStatistics->average_age}}</td>            
-        </tr>
-        <tr>
-            <th>median_age(年齡中位數)</th>
-            <td style="background-color: #b3afaf;color: black">{{$CancerStatistics->median_age}}</td>            
-        </tr>
-        <tr>
-            <th>crude_rate(粗率 (每10萬人口))</th>
-            <td style="background-color: #b3afaf;color: black">{{$CancerStatistics->crude_rate}}</td>            
-        </tr>
-        <tr>
-            <th>created_at(創建時間)</th>
-            <td style="background-color: #b3afaf;color: black">{{$CancerStatistics->created_at}}</td>            
-        </tr>
-        <tr>
-            <th>updated_at(更新時間)</th>
-            <td style="background-color: #b3afaf;color: black">{{$CancerStatistics->updated_at}}</td>            
-        </tr>
-    </thead>
-</table>
+    .operation {
+        margin-right: 15px;
+    }
+
+    .data-list {
+        background-color: #e1e1e1;
+        border: 1px solid #ddd;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s, border 0.3s;
+        list-style-type: none;
+        padding: 15px;
+        border-radius: 8px;
+    }
+
+    .data-list li {
+        font-size: 22px;
+        margin: 12px 0;
+    }
+
+    .data-list li strong {
+        color: #007bff;
+        font-weight: bold;
+        margin-left: 15px;
+    }
+
+</style>
+
+@section('content')
+    <div class="cs-show_container">
+        <h1>详细数据展示</h1>
+        <hr>
+        <div class="mt-3 mb-3 text-end">
+            <a href="{{ route('CancerStatistics.index') }}" class="operation btn btn-secondary">返回列表</a>
+            @can('manager')
+                <a href="{{ route('CancerStatistics.edit', $CancerStatistics) }}" class="operation btn btn-primary">编辑</a>
+            @elsecan('admin')
+                <a href="{{ route('CancerStatistics.edit', $CancerStatistics) }}" class="operation btn btn-primary">编辑</a>
+                <form action="{{ route('CancerStatistics.destroy', $CancerStatistics) }}" method="POST" style="display:inline;">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger">删除</button>
+                </form>
+            @endcan
+        </div>
+        <ul class="data-list">
+            <li><strong>癌症诊断年份：</strong>{{ $CancerStatistics->cancer_diagnosis_year }}</li>
+            <li><strong>性别：</strong>{{ $CancerStatistics->gender }}</li>
+            <li><strong>县市别：</strong>{{ $CancerStatistics->city }}</li>
+            <li><strong>癌症类型：</strong>{{ $CancerStatistics->cancer_type }}</li>
+            <li><strong>年龄标准化发生率（每10万人口）：</strong>{{ $CancerStatistics->age_standardized_incidence_rate }}</li>
+            <li><strong>癌症的发生数量：</strong>{{ $CancerStatistics->cancer_cases }}</li>
+            <li><strong>平均年龄：</strong>{{ $CancerStatistics->average_age }}</li>
+            <li><strong>年龄中位数：</strong>{{ $CancerStatistics->median_age }}</li>
+            <li><strong>粗率（每10万人口）：</strong>{{ $CancerStatistics->crude_rate }}</li>
+        </ul>
+    </div>
 @endsection

@@ -7,8 +7,10 @@ use App\Http\Controllers\CancerStatisticsController;
 use App\Http\Controllers\HealthAdviceController;
 use App\Http\Controllers\CancerKnowledgeController;
 use App\Http\Controllers\PageController;
-use App\Http\Controllers\termsOfService;
-use App\Http\Controllers\AdminController;
+use App\Http\Controllers\TermsOfServiceController;
+use App\Http\Controllers\UserInfoController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\Admin\UserManagementController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,62 +23,65 @@ use App\Http\Controllers\AdminController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-Route::get('/sdg3', function () {
-    return view('sdg3');
-});
-
-Route::get('/sdgs', function () {
-    return view('sdgs');
-
-});
-
 // 首页
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-// 癌症数据页面
-Route::get('CancerStatistics',[CancerStatisticsController::class, 'index'])->name('CancerStatistics.index');
-// 新增癌症數據
-Route::get('CancerStatistics/create',[CancerStatisticsController::class, 'create'])->name('CancerStatistics.create');
-// 儲存癌症數據
-Route::post('CancerStatistics/store',[CancerStatisticsController::class,'store'])->name('CancerStatistics.store');
-// 查询癌症数据
+// ECharts 图表数据 API
+Route::get('/api/cancer-statistics', [CancerStatisticsController::class, 'getData']);
+
+// 静态页面
+Route::view('/sdgs', 'sdgs');
+Route::get('privacy-policy', [PageController::class, 'privacyPolicy'])->name('privacy-policy');
+Route::get('terms-of-service', [TermsOfServiceController::class, 'termsOfService'])->name('terms-of-service');
+
+// 癌症数据模块
+Route::get('CancerStatistics', [CancerStatisticsController::class, 'index'])->name('CancerStatistics.index');
+Route::get('CancerStatistics/filter', [CancerStatisticsController::class, 'filter'])->name('CancerStatistics.filter');
 Route::get('CancerStatistics/{id}', [CancerStatisticsController::class, 'show'])->where('id', '[0-9]+')->name('CancerStatistics.show');
-// 编辑癌症数据
-Route::get('CancerStatistics/{id}/edit', [CancerStatisticsController::class, 'edit'])->where('id', '[0-9]+')->name('CancerStatistics.edit');
-// 删除癌症数据
-Route::delete('CancerStatistics/delete/{id}', [CancerStatisticsController::class, 'destroy'])->where('id', '[0-9]+')->name('CancerStatistics.destroy');
 
-// 用户登录与注册页面
+// 癌症知识库模块
+Route::get('CancerKnowledge', [CancerKnowledgeController::class, 'index'])->name('CancerKnowledge.index');
+Route::get('CancerKnowledge/{id}', [CancerKnowledgeController::class, 'show'])->where('id', '[0-9]+')->name('CancerKnowledge.show');
+Route::get('CancerKnowledge/search', [CancerKnowledgeController::class, 'search'])->name('CancerKnowledge.search');
+
+// 健康建议页面
+Route::get('health-advice', [HealthAdviceController::class, 'index'])->name('health-advice.index');
+
+// 仪表盘
+Route::get('/dashboard', [UserController::class, 'dashboard'])->name('dashboard');
+
+// 用户模块
 Auth::routes();
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-// 健康管理建议页面
-Route::get('/health-advice', [HealthAdviceController::class, 'index']);
+// 需要登录才能使用的功能
+Route::middleware(['auth'])->group(function () {
+    // 普通用户权限
+    Route::get('userInfo/show/{id}', [UserInfoController::class, 'show'])->where('id', '[0-9]+')->name('userInfo.show');
+    Route::get('userInfo/complete',[UserInfoController::class, 'complete'])->name('userInfo.complete');
+    Route::get('userInfo/{id}/edit', [UserInfoController::class, 'edit'])->where('id', '[0-9]+')->name('userInfo.edit');
+    Route::post('userInfo/store',[UserInfoController::class,'store'])->name('userInfo.store');
+    Route::get('userInfo/query-history/{id}', [UserInfoController::class, 'showQueryHistory'])->where('id', '[0-9]+')->name('userInfo.query-history');
+    Route::get('health-advice/{id}', [HealthAdviceController::class, 'show'])->where('id', '[0-9]+')->name('health-advice.show');
 
-// 癌症知识库页面
-Route::get('/cancer-knowledge', [CancerKnowledgeController::class, 'index']);
+    // 经理权限
+    Route::middleware('role:manager')->group(function () {
+        Route::resource('admin/users', UserManagementController::class)->except('destroy');
+        Route::get('CancerStatistics/{id}/edit', [CancerStatisticsController::class, 'edit'])->where('id', '[0-9]+')->name('CancerStatistics.edit');
+        Route::patch('CancerStatistics/{id}', [CancerStatisticsController::class, 'update'])->where('id', '[0-9]+')->name('CancerStatistics.update');
+        Route::get('CancerKnowledge/{id}/edit', [CancerKnowledgeController::class, 'edit'])->where('id', '[0-9]+')->name('CancerKnowledge.edit');
+        Route::patch('CancerKnowledge/{id}', [CancerKnowledgeController::class, 'update'])->where('id', '[0-9]+')->name('CancerKnowledge.update');
+    });
 
-// 隐私政策页面
-Route::get('/privacy-policy', [PageController::class, 'privacyPolicy'])->name('privacy.policy');
+    // 管理员权限
+    Route::middleware('role:admin')->group(function () {
+        Route::resource('admin/users', UserManagementController::class);
+        Route::get('CancerStatistics/create', [CancerStatisticsController::class, 'create'])->name('CancerStatistics.create');
+        Route::post('CancerStatistics', [CancerStatisticsController::class, 'store'])->name('CancerStatistics.store');
+        Route::delete('CancerStatistics/{id}', [CancerStatisticsController::class, 'destroy'])->where('id', '[0-9]+')->name('CancerStatistics.destroy');
+        Route::get('CancerKnowledge/create', [CancerKnowledgeController::class, 'create'])->name('CancerKnowledge.create');
+        Route::post('CancerKnowledge', [CancerKnowledgeController::class, 'store'])->name('CancerKnowledge.store');
+        Route::delete('CancerKnowledge/{id}', [CancerKnowledgeController::class, 'destroy'])->where('id', '[0-9]+')->name('CancerKnowledge.destroy');
+    });
 
-// 服务条款页面
-Route::get('/terms-of-service', [PageController::class, 'termsOfService'])->name('terms.of.service');
-
-// 后台首页路由
-Route::get('/admin', [AdminController::class, 'index'])->name('admin.index')->middleware('auth');
-
-// 后台其他路由，如用户管理、数据管理等
-Route::get('/admin/users', [AdminController::class, 'users'])->name('admin.users')->middleware('auth');Route::prefix('admin')->middleware('auth')->group(function() {
-    Route::get('/', [AdminController::class, 'dashboard']);
-    // 其他管理功能路由，如：
-    // Route::get('/manage-users', [AdminController::class, 'manageUsers']);
-    // Route::get('/manage-data', [AdminController::class, 'manageData']);
 });
-// 编辑和删除用户
-Route::get('/admin/users/edit/{id}', [AdminController::class, 'editUser'])->name('admin.editUser');
-Route::get('/admin/users/delete/{id}', [AdminController::class, 'deleteUser'])->name('admin.deleteUser');

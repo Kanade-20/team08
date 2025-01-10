@@ -11,11 +11,10 @@ const mix = require('laravel-mix');
  |
  */
 
- mix.js('resources/js/app.js', 'public/js')  // 编译 JS 文件
-    .sass('resources/sass/app.scss', 'public/css')  // 编译 Sass 文件
-
-// 浏览器兼容性设置
-mix.postCss('resources/css/app.css', 'public/css', [require('autoprefixer'),]);
-mix.postCss('resources/css/sdg3.css', 'public/css', [require('autoprefixer'),]);
-mix.postCss('resources/css/sdgs.css', 'public/css', [require('autoprefixer'),]);
-mix.postCss('resources/css/table.css', 'public/css', [require('autoprefixer'),]);
+mix.js('resources/js/app.js', 'public/js')
+    .sass('resources/sass/app.scss', 'public/css')
+    .vue({ version: 3 })
+    .postCss('resources/css/table.css', 'public/css')
+    .postCss('resources/css/app.css', 'public/css')
+    .postCss('resources/css/sdgs.css', 'public/css')
+    .sourceMaps();

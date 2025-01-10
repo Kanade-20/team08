@@ -16,10 +16,10 @@ class CancerStatistics extends Model
         'gender',
         'city',
         'cancer_type',
-         'age_standardized_incidence_rate',
-         'cancer_cases',
-         'average_age',
-         'median_age',
-         'crude_rate'
+        'age_standardized_incidence_rate',
+        'cancer_cases',
+        'average_age',
+        'median_age',
+        'crude_rate'
     ];
 }

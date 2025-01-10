@@ -1,18 +1,23 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="login_container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+                <div class="card-header h4">{{ __('登录') }}</div>
 
-                <div class="card-body">
+                <div class="card-body mb-3">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
+                        @if(session('warning'))
+                            <div class="alert alert-warning">
+                                {{ session('warning') }}
+                            </div>
+                        @endif
 
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+                        <div class="row mb-3 p-2">
+                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('电子邮箱：') }}</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -26,7 +31,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
+                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('密码：') }}</label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
@@ -45,7 +50,7 @@
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
                                     <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
+                                        {{ __('记住密码') }}
                                     </label>
                                 </div>
                             </div>
@@ -54,12 +59,12 @@
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
+                                    {{ __('登录') }}
                                 </button>
 
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
+                                        {{ __('忘记密码？') }}
                                     </a>
                                 @endif
                             </div>
@@ -70,4 +75,11 @@
         </div>
     </div>
 </div>
+
+@if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+
 @endsection

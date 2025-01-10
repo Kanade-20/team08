@@ -1,140 +1,117 @@
-<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <style> 
     .navbar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100px;
-        color: white;
         background-color: #4CAF50 !important;
-        z-index: 999;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         text-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
 
     .navbar-brand {
-        margin-left: 15px;
-        font-size: 50px;
+        font-size: 45px;
         font-weight: bold;
     }
 
-    #navbarNav {
-        justify-content: center;
-        margin-top: 10px;
-    }
-
-   .nav-link {
-        font-size: 30px;
-        padding: 15px 20px;
-        margin: 50px;
+    .nav-link {
+        font-size: 28px;
+        margin-right: 20px;
+        transition: background-color 0.3s ease;
     }
 
     .nav-link:hover {
         background-color: rgba(255, 255, 255, 0.2);
         border-radius: 5px;
-        transition: background-color 0.3s;
     }
-
+    
     .users {
-        display: flex;
-        list-style: none;
-        font-size: 22px;
-        margin-right: 30px;
-        margin-bottom: 50px; 
+        margin-right: 25px;
     }
 
     .users img {
-        height: 45px;
-        width: 100%;
-        max-width: 30px;
-        margin-top: 8px;
-    }
-
-    .users li {
-        margin-top: 18px;
+        max-width: 50px;
+        height: 40px;
     }
 
     .users a {
-        padding-left: 0; 
-        padding-right: 0;
+        padding-bottom: 38px;
+        font-size: 18px;
+        margin-right: 5px;
+    }
+    
+    .login {
+        padding-right: 20px;
     }
 
-    .login,.register {
-        display: flex;
-        margin-left: 30px;
-        margin-top: 8px;
+    .welcome {
+        margin-bottom: 20px;
+        font-size: 20px;
+        margin-right: 20px;
+    }
+    
+    .setting {
+        padding-top: 5px;
+        font-size: 18px;
     }
 
+    .logout_form {
+        padding-bottom: 22px;
+        padding-left: 25px;
+    }
 
-
-    /* 响应式布局 */
-    @media (max-width: 767px) {
-        .navbar-brand {
-            font-size: 28px;
-        }
-
-        .navbar-nav {
-            text-align: center;
-        }
-
-        .navbar-nav .nav-item {
-            margin: 5px 0;
-        }
+    .logout .btn {
+        font-size: 18px;
     }
 </style>
 
-<!-- 导航栏 -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">癌症信息平台</a>
+        <a class="navbar-brand text-white" href="#">癌症信息平台</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" href="/">首页</a>
+                    <a class="nav-link text-white" href="/home">首页</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/CancerStatistics">癌症数据</a>
+                    <a class="nav-link text-white" href="/CancerStatistics">癌症数据</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/health-advice">健康管理建议</a>
+                    <a class="nav-link text-white" href="/health-advice">健康管理建议</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/cancer-knowledge">癌症知识库</a>
+                    <a class="nav-link text-white" href="/CancerKnowledge">癌症知识库</a>
                 </li>
             </ul>
-            <div class="users">
-                @auth
-                <!-- 用户已登录，显示登出按钮 -->
-                <li class="logout">
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: inline;">
+        </div>
+        <div class="users d-flex align-items-center">
+             <!-- 登录和注册链接，仅当用户未登录时显示 -->
+            @guest
+                <a class="login text-white d-flex align-items-center text-decoration-none" href="{{ route('login') }}">
+                    <img class="me-1" src="/images/icons/login.png" alt="login">登录
+                </a>
+                <a class="text-white d-flex align-items-center text-decoration-none" href="{{ route('register') }}">
+                    <img class="me-1" src="/images/icons/register.png" alt="register">注册
+                </a>
+            @else
+                <!-- 如果用户已登录，显示用户信息和退出按钮 -->
+                <li class="welcome text-white list-unstyled">欢迎，{{ Auth::user()->name }}！</li>
+                <li class="setting list-unstyled">
+                    <a class="text-white d-flex align-items-center text-decoration-none" href="{{ route('userInfo.show', ['id' => $user->id]) }}">
+                        <img class="me-1" src="/images/icons/setting.png" alt="setting">用户信息
+                    </a>
+                </li>
+                <li class="logout_form list-unstyled">
+                    <form action="{{ route('logout') }}" method="POST">
                         @csrf
-                        <button type="submit" class="btn btn-link">登出</button>
+                        <div class="logout d-flex">
+                            <img class="me-1" src="/images/icons/logout.png" alt="logout"/>
+                            <button class="text-white align-items-center btn btn-link text-decoration-none">登出</button>
+                        </div>
                     </form>
                 </li>
-                @else
-                <!-- 用户未登录，显示登录、注册按钮 -->
-                <div class="login">
-                    <img src="/images/login.png" alt="login">
-                    <li>
-                        <a href="{{ route('login') }}">登录</a>
-                    </li>
-                </div>
-                <div class="register">
-                    <img src="/images/register.png" alt="register">
-                    <li>
-                        <a href="{{ route('register') }}">注册</a>
-                    </li>
-                </div>
-                @endauth
-            </div>    
-        </div>
+            @endguest
+        </div>    
     </div>
 </nav>
-
-<!-- 引入JavaScript（例如Bootstrap的JavaScript功能）-->
-<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script> -->

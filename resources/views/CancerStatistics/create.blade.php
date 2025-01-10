@@ -2,52 +2,34 @@
 
 @section('title', '台湾癌症统计数据')
 
-@section('CancerStatistics_create')
-<style>
-    .CancerStatistics_create {
-        margin-top: 120px;
-    }
-</style>
-<div class="CancerStatistics_create">
-    <h1>新增台灣癌症統計數據表單</h1>
-    <hr>
-    {!! Form::open(['url' => 'CancerStatistics/store']) !!}
-        <div class="form-group">
-            {!! Form::label('cancer_diagnosis_year', '癌症診斷的年份:') !!}
-            {!! Form::text('cancer_diagnosis_year',null,['class' => 'form-control']) !!}
-        </div>
-        <div class="form-group">
-            {!! Form::label('gender', '性別（例如：男性、女性、全等）:') !!}
-            {!! Form::text('gender',null,['class' => 'form-control']) !!}
-        </div>
-        <div class="form-group">
-            {!! Form::label('city', '縣市別:') !!}
-            {!! Form::text('city',null,['class' => 'form-control']) !!}
-        </div>
-        <div class="form-group">
-            {!! Form::label('cancer_type', '癌症類型（例如：口腔、胃等）:') !!}
-            {!! Form::text('cancer_type',null,['class' => 'form-control']) !!}
-        </div>
-        <div class="form-group">
-            {!! Form::label('age_standardized_incidence_rate', '年齡標準化發生率 (WHO 2000 世界標準人口 每10萬人口):') !!}
-            {!! Form::text('age_standardized_incidence_rate',null,['class' => 'form-control']) !!}
-        </div>
-        <div class="form-group">
-            {!! Form::label('cancer_cases', '癌症的發生數量:') !!}
-            {!! Form::text('cancer_cases',null,['class' => 'form-control']) !!}
-        </div>
-        <div class="form-group">
-            {!! Form::label('average_age', '平均年齡:') !!}
-            {!! Form::text('average_age',null,['class' => 'form-control']) !!}
-        </div>
-        <div class="form-group">
-            {!! Form::label('median_age', '年齡中位數:') !!}
-            {!! Form::text('median_age',null,['class' => 'form-control']) !!}
-        </div>
-        <div class="form-group">
-            {!! Form::label('crude_rate', '粗率 (每10萬人口):') !!}
-            {!! Form::text('crude_rate',null,['class' => 'form-control']) !!}
-        </div>
-        <button type="submit">提交</button>
-</div>
+@push('csrf')
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+@endpush
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+@section('content')
+    <div class="CS-create_container">
+        @auth
+            <h1>新增癌症数据</h1>
+            <hr>
+            <a class="return text-white btn btn-primary mb-2" href="{{ route('CancerStatistics.index') }}">返回</a>
+            @include('message.list')
+                {!! Form::open(['url' => 'CancerStatistics/store']) !!}
+                    @include('CancerStatistics.form', ['submitButtonText' => '新增'])
+                {!! Form::close() !!}
+        
+            <!-- 如果有錯誤，使用 JavaScript 彈窗顯示錯誤訊息 -->
+            @if ($errors->any())
+                <script>
+                    window.onload = function() {
+                        let errorMessages = @json($errors->all());
+                        if (errorMessages.length > 0) {
+                            alert("表单错误：\n" + errorMessages.join("\n"));
+                        }
+                    };
+                </script>
+            @endif
+        @endauth
+    </div>
 @endsection

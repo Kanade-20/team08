@@ -7,8 +7,13 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     // 首页
-    public function index()
+    public function index(Request $request)
     {
-        return view('home');
+        // 获取从路由传来的消息
+        $errorMessage = $request->session()->get('error');
+        
+        // 返回首页视图并传递消息
+        return view('home', compact('errorMessage'));
     }
+
 }
