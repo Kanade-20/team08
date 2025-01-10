@@ -20,10 +20,16 @@ class CancerStatisticsController extends Controller
      */
     public function index()
     {
-        //
-        $cancerstatistics = CancerStatistics::all();
-        return view('CancerStatistics.index',compact('cancerstatistics'));
+        // 每頁顯示 10 筆資料
+        $perPage = 10;
+        
+        // 使用 paginate 進行分頁查詢
+        $cancerstatistics = CancerStatistics::paginate($perPage);
+
+        // 傳遞資料到視圖
+        return view('CancerStatistics.index', compact('cancerstatistics'));
     }
+
 
     /**
      * Show the form for creating a new resource.

@@ -61,4 +61,7 @@
                 @endforeach
             </tbody>
         </table>
+        <div class="pagination">
+            {{ $cancerstatistics->links('vendor.pagination.custom') }}
+        </div>
 @endsection

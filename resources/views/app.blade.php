@@ -65,12 +65,11 @@
         .homecss {
             position: relative;
             width: 100%;
-            height: 500px;
-            background: rgba(222, 220, 220, 0.504);
-            background: url(https://www.shutterstock.com/image-vector/sdg-goal-3-good-health-260nw-2552475201.jpg)
-                        no-repeat 50% 50% fixed;
-            background-size: cover;  /* 用cover讓圖片覆蓋整個區域 */
-            overflow: hidden;
+            height: 450px;
+            background: url(https://www.shutterstock.com/image-vector/sdg-goal-3-good-health-260nw-2552475205.jpg)
+                        no-repeat center center;
+            background-size: contain; /* 調整圖片大小以完全顯示 */
+            overflow: hidden; /* 向上移動 */
         }
 
 
@@ -177,6 +176,30 @@
             background-color: rgba(193, 137, 223, 0.564)
         } 
 
+        /* 分頁按鈕樣式 */
+        .pagination {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .page-button {
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #1da33a9b;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .page-button:hover {
+            background-color: #2cb6e0;
+        }
+
+        .page-button.disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+
         .create_h {
             color: rgb(0, 0, 0);
             font-size:150%;
@@ -203,7 +226,7 @@
         
         img.sdgs{
             display: block;
-            margin-left: 10px ;
+            margin-left: 25px ;
             height:134px;
             width:200px;
             border-radius: 15px;
